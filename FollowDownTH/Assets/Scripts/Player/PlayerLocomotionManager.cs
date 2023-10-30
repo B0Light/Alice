@@ -57,6 +57,10 @@ public class PlayerLocomotionManager : MonoBehaviour
     public ParticleSystem weaponFX;
     public ParticleSystem weaponChargeFX;
 
+    [Header("Dodge")]
+    private Vector3 rollDirection;
+    [SerializeField] float dodgeStaminaCost = 25;
+
     string oh_Light_Attack_01 = "OH_Light_Attack_01";
     string oh_Light_Attack_02 = "OH_Light_Attack_02";
     string oh_Heavy_Attack_01 = "OH_Heavy_Attack_01";
@@ -71,6 +75,13 @@ public class PlayerLocomotionManager : MonoBehaviour
     string oh_Charge_Attack_02 = "OH_Charge_Attack_02_Wind_Up";
     string th_Charge_Attack_01 = "TH_Charge_Attack_01_Wind_Up";
     string th_Charge_Attack_02 = "TH_Charge_Attack_02_Wind_Up";
+
+    [SerializeField] KeyCode key_Dodge = KeyCode.Space;
+    [SerializeField] KeyCode key_ChangeWeapon = KeyCode.Y;
+    [SerializeField] KeyCode key_Sprint = KeyCode.LeftShift;
+    [SerializeField] KeyCode key_ChargeAttack = KeyCode.Q;
+    [SerializeField] KeyCode key_MoveType = KeyCode.Tab;
+    [SerializeField] KeyCode key_Targeting = KeyCode.E;
 
     private void Awake()
     {
@@ -209,7 +220,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
 
-        HandleBackStep();
+        HandleDodge();
         HandleSprint();
         HandleWalkOrRun();
         HandleStrafe();
@@ -255,7 +266,7 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void HandleTwoHand()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
+        if (Input.GetKeyDown(key_ChangeWeapon))
         {
             isTwoHandingWeapon = !isTwoHandingWeapon;
             animator.SetBool("isTwoHandingWeapon", isTwoHandingWeapon);
@@ -448,7 +459,7 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void HandleChargeAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(key_ChargeAttack))
         {
             chargeAttackInput = true;
         }
@@ -481,7 +492,7 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         if (isPerformingAction)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(key_ChargeAttack))
             {
                 chargeAttackInput = true;
             }
@@ -492,7 +503,7 @@ public class PlayerLocomotionManager : MonoBehaviour
 
                 if (attackLastPerformed == oh_Charge_Attack_01)
                 {
-                    if (Input.GetKeyDown(KeyCode.Q))
+                    if (Input.GetKeyDown(key_ChargeAttack))
                     {
                         PlayActionAnimation("OH_Charge_Attack_02_Wind_Up", true);
                         weaponChargeFX.Stop();
@@ -502,7 +513,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 }
                 else if (attackLastPerformed == oh_Charge_Attack_02)
                 {
-                    if (Input.GetKeyDown(KeyCode.Q))
+                    if (Input.GetKeyDown(key_ChargeAttack))
                     {
                         PlayActionAnimation("OH_Charge_Attack_01_Wind_Up", true);
                         weaponChargeFX.Stop();
@@ -512,7 +523,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 }
                 else if (attackLastPerformed == th_Charge_Attack_01)
                 {
-                    if (Input.GetKeyDown(KeyCode.Q))
+                    if (Input.GetKeyDown(key_ChargeAttack))
                     {
                         PlayActionAnimation("TH_Charge_Attack_02_Wind_Up", true);
                         weaponChargeFX.Stop();
@@ -522,7 +533,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 }
                 else if (attackLastPerformed == th_Charge_Attack_02)
                 {
-                    if (Input.GetKeyDown(KeyCode.Q))
+                    if (Input.GetKeyDown(key_ChargeAttack))
                     {
                         PlayActionAnimation("TH_Charge_Attack_01_Wind_Up", true);
                         weaponChargeFX.Stop();
@@ -534,26 +545,46 @@ public class PlayerLocomotionManager : MonoBehaviour
         }
     }
 
-    private void HandleBackStep()
+    private void HandleDodge()
     {
         if (isPerformingAction)
             return;
 
-        if (Input.GetKeyUp(KeyCode.Tab))
+        /*
+        if (player.playerNetworkManager.currentStamina.Value <= 0)
+            return;
+        */
+        if (Input.GetKeyUp(key_Dodge))
         {
-            attackLastPerformed = null;
-
-            animator.SetBool("isPerformingBackStep", true);
-
-            if (isTwoHandingWeapon)
+            if (moveAmount > 0)
             {
-                PlayActionAnimation("TH_Backstep", true);
+                rollDirection = moveDirection;
+                rollDirection.y = 0;
+                rollDirection.Normalize();
+
+                Quaternion playerRotation = Quaternion.LookRotation(rollDirection);
+                this.transform.rotation = playerRotation;
+
+                PlayActionAnimation("Roll_Forward_01", true);
             }
             else
             {
-                PlayActionAnimation("OH_Backstep", true);
+                attackLastPerformed = null;
+
+                animator.SetBool("isPerformingBackStep", true);
+
+                if (isTwoHandingWeapon)
+                {
+                    PlayActionAnimation("TH_Backstep", true);
+                }
+                else
+                {
+                    PlayActionAnimation("OH_Backstep", true);
+                }
             }
         }
+        
+
     }
 
     private void HandleBackStepAttack()
@@ -582,14 +613,11 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void HandleStrafe()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(key_Targeting))
         {
-            isStrafing = true;
+            isStrafing = !isStrafing;
         }
-        else
-        {
-            isStrafing = false;
-        }
+        
     }
 
     private void HandleSprint()
@@ -597,7 +625,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         if (isPerformingAction)
             return;
 
-        if (Input.GetKey(KeyCode.C) && moveAmount > 0)
+        if (Input.GetKey(key_Sprint) && moveAmount > 0)
         {
             isSprinting = true;
             isWalking = false;
@@ -614,7 +642,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         if (isSprinting || isPerformingAction)
             return;
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(key_MoveType))
         {
             if (isWalking || !isRunning)
             {
