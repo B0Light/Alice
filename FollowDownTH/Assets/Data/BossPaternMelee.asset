@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BossPaternMelee
   m_EditorClassIdentifier: 
   attackType: MeleeAttack
-  range: 5
-  damage: 5
+  range: 2
+  damage: 15

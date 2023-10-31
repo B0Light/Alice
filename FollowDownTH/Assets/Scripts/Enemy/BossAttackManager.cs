@@ -50,7 +50,6 @@ public class BossAttackManager : MonoBehaviour
             currPattern = patternMelee;
             if (distance < patternMelee.range)
             {
-                
                 Attack();
             }
             else
@@ -65,6 +64,7 @@ public class BossAttackManager : MonoBehaviour
 
     private void MoveToPlayer()
     {
+        if (isPerformingAction) return;
         Vector3 newDestination = _player.transform.position + (_navMeshAgent.transform.forward * currPattern.range);
         _navMeshAgent.SetDestination(newDestination);
         animator.SetBool("isWalk", true);
@@ -75,6 +75,7 @@ public class BossAttackManager : MonoBehaviour
         if (isPerformingAction) return;
         _navMeshAgent.ResetPath();
         enemyWeaponCollider.SetActive(true);
+        transform.LookAt(_player.transform);
         PlayActionAnimation(currPattern.attackType, true);
     }
 

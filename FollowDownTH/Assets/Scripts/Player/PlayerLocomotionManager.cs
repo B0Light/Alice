@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerLocomotionManager : MonoBehaviour
 {
@@ -15,8 +19,9 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] float mouseY;
 
     //PLAYER VARIABLES
+    [FormerlySerializedAs("isStrafing")]
     [Header("Player")]
-    [SerializeField] bool isStrafing;
+    [SerializeField] bool isLockOn;
     [SerializeField] bool isSprinting;
     [SerializeField] bool isRunning;
     [SerializeField] bool isWalking;
@@ -41,11 +46,17 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] float maximumPivot;
     [SerializeField] GameObject playerCamera;
     [SerializeField] GameObject playerCameraPivot;
-    [SerializeField] Camera cameraObject;
+    [SerializeField] CinemachineVirtualCamera cameraObject;
     [Header("Camera Debug")]
     [SerializeField] float leftandRightLookAngle;
     [SerializeField] float upAndDownLookAngle;
     Vector3 cameraFollowVelocity = Vector3.zero;
+    
+    [Header("Targeting")]
+    public float sphereRadius = 10f;
+    public LayerMask enemyLayer;
+    private Transform playerTransform;
+    private Transform targetTransform;
 
     //ATTACK VARIABLES
     [SerializeField] string attackLastPerformed;
@@ -87,6 +98,12 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        playerTransform = transform;
+        CursorLock();
     }
 
     private void Update()
@@ -169,13 +186,13 @@ public class PlayerLocomotionManager : MonoBehaviour
 
         if (isSprinting)
         {
-            isStrafing = false;
+            isLockOn = false;
             animator.SetFloat("Horizontal", 0, 0.2f, Time.deltaTime);
             animator.SetFloat("Vertical", 2, 0.2f, Time.deltaTime);
         }
         else
         {
-            if (isStrafing)
+            if (isLockOn)
             {
                 if (isWalking)
                 {
@@ -223,7 +240,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         HandleDodge();
         HandleSprint();
         HandleWalkOrRun();
-        HandleStrafe();
+        HandleLockOn();
         HandleTwoHand();
         HandleLightAttack();
         HandleHeavyAttack();
@@ -611,13 +628,48 @@ public class PlayerLocomotionManager : MonoBehaviour
         }
     }
 
-    private void HandleStrafe()
+    private void HandleLockOn()
     {
         if (Input.GetKeyDown(key_Targeting))
         {
-            isStrafing = !isStrafing;
+            if (isLockOn == false)
+            {
+                GameObject targetObject = FindClosestEnemyObject();
+
+                if (targetObject != null)
+                {
+                    targetTransform = targetObject.transform;
+                    isLockOn = true;
+                    cameraObject.LookAt = targetTransform;
+                    return;
+                }
+            }
+            
+            isLockOn = false;
+            cameraObject.LookAt = null;
+            targetTransform = null;
+            
         }
         
+    }
+    
+    GameObject FindClosestEnemyObject()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(playerTransform.position, sphereRadius, enemyLayer);
+        GameObject closestEnemy = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (Collider hitCollider in hitColliders)
+        {
+            float distance = Vector3.Distance(playerTransform.position, hitCollider.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = hitCollider.gameObject;
+            }
+        }
+
+        return closestEnemy;
     }
 
     private void HandleSprint()
@@ -659,7 +711,7 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void HandlePlayerRotation()
     {
-        if (isStrafing)
+        if (isLockOn)
         {
             Vector3 rotationDirection = moveDirection;
             rotationDirection = cameraObject.transform.forward;
@@ -742,12 +794,33 @@ public class PlayerLocomotionManager : MonoBehaviour
         cameraRotation = Vector3.zero;
         cameraRotation.y = leftandRightLookAngle;
         targetCameraRotation = Quaternion.Euler(cameraRotation);
-        playerCamera.transform.rotation = targetCameraRotation;
 
+        if (isLockOn)
+        {
+            playerCamera.transform.LookAt(cameraObject.LookAt);
+        }
+        else
+        {
+            playerCamera.transform.rotation = targetCameraRotation;
+        }
         cameraRotation = Vector3.zero;
         cameraRotation.x = upAndDownLookAngle;
         targetCameraRotation = Quaternion.Euler(cameraRotation);
-        playerCameraPivot.transform.localRotation = targetCameraRotation;
+        
+        playerCameraPivot.transform.localRotation = 
+            isLockOn ? quaternion.identity: targetCameraRotation;
+    }
+
+    private void CursorLock()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    private void CursorUnlock()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void PlayActionAnimation(string animation, bool isPerformingAction)
