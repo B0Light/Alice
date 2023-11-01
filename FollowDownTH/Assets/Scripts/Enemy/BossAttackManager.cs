@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using static Cinemachine.CinemachineTargetGroup;
 using static UnityEngine.GraphicsBuffer;
 
 public class BossAttackManager : MonoBehaviour
@@ -22,6 +25,19 @@ public class BossAttackManager : MonoBehaviour
     [Header("BossPattern")]
     private BossPattern currPattern;
     [SerializeField] private BossPattern patternMelee;
+
+    [Header("RangeAttack")]
+    private bool isReady = true;
+    private float fireCooldown = 0f;
+    public Transform firePoint;
+    public GameObject prefabCast;
+    private ParticleSystem Effect;
+    public float fireRate = 0.1f;
+    public Vector2 uiOffset = new Vector2(0,1);
+
+    [Space]
+    [Header("Camera Shaker script")]
+    public CameraShaker cameraShaker;
 
     private void Start()
     {
@@ -54,7 +70,8 @@ public class BossAttackManager : MonoBehaviour
             }
             else
             {
-                MoveToPlayer();
+                //MoveToPlayer();
+                RangeAttack();
             }
         }
         
@@ -78,6 +95,31 @@ public class BossAttackManager : MonoBehaviour
         transform.LookAt(_player.transform);
         PlayActionAnimation(currPattern.attackType, true);
     }
+
+    private void RangeAttack()
+    {
+        if (isPerformingAction) return;
+
+        if (isReady)
+        {
+            GameObject projectile = Instantiate(prefabCast, firePoint.position, firePoint.rotation);
+            projectile.GetComponent<TargetProjectile>().UpdateTarget(_player.transform, (Vector3)uiOffset);
+            Effect = prefabCast.GetComponent<ParticleSystem>();
+            Effect.Play();
+            
+            if(cameraShaker)
+                StartCoroutine(cameraShaker.Shake(0.1f, 2, 0.2f, 0));
+            isReady = false;
+            StartCoroutine(CastCooldown(0.1f));
+        }
+    }
+
+    IEnumerator CastCooldown(float cooldownDuration)
+    {
+        yield return new WaitForSeconds(cooldownDuration);
+        isReady = true;
+    }
+
 
     IEnumerator RotateTowardsTarget(Transform aTransform, Transform bTransform, float duration)
     {

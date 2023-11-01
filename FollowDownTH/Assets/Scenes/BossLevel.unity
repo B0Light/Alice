@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10074,6 +10074,11 @@ MonoBehaviour:
   _rigidbody: {fileID: 1161633775}
   enemyWeaponCollider: {fileID: 717561174}
   patternMelee: {fileID: 11400000, guid: f7b26bb00cc3fb34c94dabdd1a59bff4, type: 2}
+  firePoint: {fileID: 1678101235}
+  prefabCast: {fileID: 1184375899483656, guid: 39e5a82063d32e141b3633be2f14b562, type: 3}
+  fireRate: 0.1
+  uiOffset: {x: 0, y: 1}
+  cameraShaker: {fileID: 0}
 --- !u!95 &1161633774
 Animator:
   serializedVersion: 5

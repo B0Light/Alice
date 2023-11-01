@@ -73,6 +73,8 @@ Material:
     - _CullMode: 0
     - _Depthpower: 3
     - _Emission: 2
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _Usecenterglow: 0
     - _Usecustomrandom: 0
     - _Usedepth: 1

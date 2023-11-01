@@ -84,6 +84,8 @@ Material:
     - _Distortionpower: 0
     - _Emission: 6
     - _Opacity: 1
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _Softedges: 1
     - _UseNoiseRandomUV: 1
     - _Usecenterglow: 0
