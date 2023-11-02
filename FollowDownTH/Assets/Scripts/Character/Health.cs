@@ -8,12 +8,11 @@ public class Health : MonoBehaviour
 {
     public Gauge<float> health;
     [SerializeField] float maxHealth = 100f;
-    [SerializeField, Range(0.01f,10f)] float recover = 0.01f;
     private MeshRenderer[] meshs;
 
     public bool isDead = false;
     public bool isDmg = false;
-    private void Awake()
+    protected virtual void Awake()
     {
         meshs = GetComponentsInChildren<MeshRenderer>();
     }
@@ -21,12 +20,6 @@ public class Health : MonoBehaviour
     void Start()
     {
         health = new Gauge<float>(maxHealth);
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        RecoverHealth(recover);
     }
 
     public void RecoverHealth(float value)
@@ -38,7 +31,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDmg(float dmg)
+    public virtual void TakeDmg(float dmg)
     {
         if (isDead) {
             return;

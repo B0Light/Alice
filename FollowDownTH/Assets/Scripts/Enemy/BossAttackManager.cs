@@ -19,8 +19,10 @@ public class BossAttackManager : MonoBehaviour
 
     private NavMeshAgent _navMeshAgent;
 
-    [Header("EnemyWeapon")]
+    [Header("EnemyWeapon")] 
+    [SerializeField] private GameObject weaponHat;
     [SerializeField] private GameObject enemyWeaponCollider;
+    [SerializeField] private GameObject weaponStaff;
 
     [Header("BossPattern")]
     private BossPattern currPattern;
@@ -28,7 +30,7 @@ public class BossAttackManager : MonoBehaviour
 
     [Header("RangeAttack")]
     private bool isReady = true;
-    private float fireCooldown = 0f;
+    private float fireCooldown = 0.1f;
     public Transform firePoint;
     public GameObject prefabCast;
     private ParticleSystem Effect;
@@ -54,7 +56,6 @@ public class BossAttackManager : MonoBehaviour
 
     IEnumerator Think()
     {
-        yield return new WaitForSeconds(0.1f);
         if (_player == null)
         {
             _player = GameObject.FindGameObjectWithTag("Player");
@@ -62,7 +63,7 @@ public class BossAttackManager : MonoBehaviour
         else
         {
             float distance = Vector3.Distance(this.transform.position, _player.transform.position);
-            StartCoroutine(RotateTowardsTarget(this.transform, _player.transform, 0.5f));
+            StartCoroutine(RotateTowardsTarget(this.transform, _player.transform, 0.3f));
             currPattern = patternMelee;
             if (distance < patternMelee.range)
             {
@@ -70,11 +71,11 @@ public class BossAttackManager : MonoBehaviour
             }
             else
             {
-                //MoveToPlayer();
-                RangeAttack();
+                //EnterSecondPhase();
+                RangeAttackHandler();
             }
         }
-        
+        yield return new WaitForSeconds(2f);
         StartCoroutine(Think());
     }
 
@@ -96,28 +97,40 @@ public class BossAttackManager : MonoBehaviour
         PlayActionAnimation(currPattern.attackType, true);
     }
 
-    private void RangeAttack()
+    private void EnterSecondPhase()
     {
-        if (isPerformingAction) return;
+        if(isPerformingAction) return;
+        PlayActionAnimation("TakeOnHat",true);
+        StartCoroutine(RangeAttackCombo());
+    }
 
-        if (isReady)
+    public void ChangeWeapon()
+    {
+        weaponStaff.SetActive(false);
+        weaponHat.SetActive(true);
+    }
+
+    private void RangeAttackHandler()
+    {
+        if(isPerformingAction) return;
+        PlayActionAnimation("RangeAttack",true);
+        StartCoroutine(RangeAttackCombo());
+    }
+    IEnumerator RangeAttackCombo()
+    {
+        yield return new WaitForSeconds(0.5f);
+        for(int i = 0; i < 5; i++)
         {
             GameObject projectile = Instantiate(prefabCast, firePoint.position, firePoint.rotation);
-            projectile.GetComponent<TargetProjectile>().UpdateTarget(_player.transform, (Vector3)uiOffset);
+            projectile.GetComponent<HatProjectile>().UpdateTarget(_player.transform, (Vector3)uiOffset);
             Effect = prefabCast.GetComponent<ParticleSystem>();
             Effect.Play();
             
             if(cameraShaker)
                 StartCoroutine(cameraShaker.Shake(0.1f, 2, 0.2f, 0));
             isReady = false;
-            StartCoroutine(CastCooldown(0.1f));
+            yield return new WaitForSeconds(fireCooldown);
         }
-    }
-
-    IEnumerator CastCooldown(float cooldownDuration)
-    {
-        yield return new WaitForSeconds(cooldownDuration);
-        isReady = true;
     }
 
 
@@ -145,8 +158,13 @@ public class BossAttackManager : MonoBehaviour
 
     private void PlayActionAnimation(string animation, bool isPerformingAction)
     {
+        if(this.isPerformingAction)
+            animator.CrossFade(animation, 1.5f);
+        else
+            animator.CrossFade(animation, 0.2f);
+        
         animator.SetBool("isPerformingAction", isPerformingAction);
-        animator.CrossFade(animation, 0.2f);
+        
     }
 
     private void OnAnimatorMove()

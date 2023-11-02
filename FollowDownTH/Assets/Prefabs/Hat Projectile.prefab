@@ -4893,12 +4893,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4315225039200434}
   - component: {fileID: 198757008916250416}
-  - component: {fileID: 114940450032716746}
+  - component: {fileID: 2401999797673665242}
   - component: {fileID: 199514712631262364}
   - component: {fileID: 108284476823858990}
   - component: {fileID: 8672988534000608177}
   m_Layer: 0
-  m_Name: Light projectile 1
+  m_Name: Hat Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9699,7 +9699,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &114940450032716746
+--- !u!114 &2401999797673665242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9708,12 +9708,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1184375899483656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e24cfb966f425fa47bfec1667489bb42, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b87b206901c04b9baa3a547f1c97612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
   hit: {fileID: 1408840603016568, guid: 04c37cc0cab73994280830cd0738ac85, type: 3}
-  flash: {fileID: 0}
+  flash: {fileID: 1625297098178738, guid: 3ea7f3c3fc80e8a41a0eaa283551cfdc, type: 3}
   Detached: []
   sideAngle: 20
   upAngle: 15

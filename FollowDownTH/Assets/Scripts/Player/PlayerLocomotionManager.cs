@@ -11,6 +11,18 @@ public class PlayerLocomotionManager : MonoBehaviour
     Animator animator;
     Rigidbody playerRigidBody;
 
+    public enum States
+    {
+        Idle,
+        LightAttack,
+        HeavyAttack,
+        ChargeAttack,
+        Dodge,
+        Parrying,
+        Damaged,
+    }
+    public States curPerformingAction;
+
     //INPUT VARIABLES
     [Header("INPUTS")]
     [SerializeField] float verticalMovement;
@@ -26,10 +38,10 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] bool isRunning;
     [SerializeField] bool isWalking;
     [SerializeField] bool isTwoHandingWeapon;
-    [SerializeField] float rotationSpeed;
-    [SerializeField] float sprintSpeed;
-    [SerializeField] float runningSpeed;
-    [SerializeField] float walkingSpeed;
+    [SerializeField] float rotationSpeed = 20f;
+    [SerializeField] float sprintSpeed = 6f;
+    [SerializeField] float runningSpeed = 4f;
+    [SerializeField] float walkingSpeed = 1.5f;
 
     [Header("Player Debug")]
     [SerializeField] float moveAmount;
@@ -40,10 +52,10 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     //CAMERA VARIABLES
     [Header("Camera")]
-    [SerializeField] float leftAndRightLookSpeed;
-    [SerializeField] float upAndDownLookSpeed;
-    [SerializeField] float minimumPivot;
-    [SerializeField] float maximumPivot;
+    [SerializeField] float leftAndRightLookSpeed = 500f;
+    [SerializeField] float upAndDownLookSpeed = 500f;
+    [SerializeField] float minimumPivot = -35f;
+    [SerializeField] float maximumPivot = 35f;
     [SerializeField] GameObject playerCamera;
     [SerializeField] GameObject playerCameraPivot;
     [SerializeField] CinemachineVirtualCamera cameraObject;
@@ -59,10 +71,11 @@ public class PlayerLocomotionManager : MonoBehaviour
     private Transform targetTransform;
 
     //ATTACK VARIABLES
-    [SerializeField] string attackLastPerformed;
-    [SerializeField] bool lightAttackInput;
-    [SerializeField] bool heavyAttackInput;
-    [SerializeField] bool chargeAttackInput;
+    [SerializeField] private string attackLastPerformed;
+    [SerializeField] private bool lightAttackInput;
+    [SerializeField] private bool heavyAttackInput;
+    [SerializeField] private bool chargeAttackInput;
+    [SerializeField] private bool parryingInput;
 
     [Header("Weapon")]
     public ParticleSystem weaponFX;
@@ -87,12 +100,16 @@ public class PlayerLocomotionManager : MonoBehaviour
     string th_Charge_Attack_01 = "TH_Charge_Attack_01_Wind_Up";
     string th_Charge_Attack_02 = "TH_Charge_Attack_02_Wind_Up";
 
-    [SerializeField] KeyCode key_Dodge = KeyCode.Space;
-    [SerializeField] KeyCode key_ChangeWeapon = KeyCode.Y;
-    [SerializeField] KeyCode key_Sprint = KeyCode.LeftShift;
-    [SerializeField] KeyCode key_ChargeAttack = KeyCode.Q;
-    [SerializeField] KeyCode key_MoveType = KeyCode.Tab;
-    [SerializeField] KeyCode key_Targeting = KeyCode.E;
+    private string oh_Parry;
+    private string th_Parry;
+    
+    [SerializeField] private KeyCode key_Dodge = KeyCode.Space;
+    [SerializeField] private KeyCode key_ChangeWeapon = KeyCode.Y;
+    [SerializeField] private KeyCode key_Sprint = KeyCode.LeftShift;
+    [SerializeField] private KeyCode key_ChargeAttack = KeyCode.Q;
+    [SerializeField] private KeyCode key_MoveType = KeyCode.Tab;
+    [SerializeField] private KeyCode key_Targeting = KeyCode.R;
+    [SerializeField] private KeyCode key_Parrying = KeyCode.E;
 
     private void Awake()
     {
@@ -112,6 +129,10 @@ public class PlayerLocomotionManager : MonoBehaviour
         UpdateAnimatorParameters();
         isPerformingAction = animator.GetBool("isPerformingAction");
         isPerformingBackStep = animator.GetBool("isPerformingBackStep");
+        if (!isPerformingAction)
+        {
+            curPerformingAction = States.Idle;
+        }
     }
 
     private void FixedUpdate()
@@ -304,6 +325,7 @@ public class PlayerLocomotionManager : MonoBehaviour
 
         if (lightAttackInput)
         {
+            curPerformingAction = States.LightAttack;
             lightAttackInput = false;
 
             if (isTwoHandingWeapon)
@@ -391,7 +413,7 @@ public class PlayerLocomotionManager : MonoBehaviour
 
         if (heavyAttackInput)
         {
-
+            curPerformingAction = States.HeavyAttack;
             heavyAttackInput = false;
 
             if (isTwoHandingWeapon)
@@ -486,6 +508,7 @@ public class PlayerLocomotionManager : MonoBehaviour
 
         if (chargeAttackInput)
         {
+            curPerformingAction = States.ChargeAttack;
             chargeAttackInput = false;
 
             if (isTwoHandingWeapon)
@@ -561,6 +584,38 @@ public class PlayerLocomotionManager : MonoBehaviour
             }
         }
     }
+    
+    private void HandleParrying()
+    {
+        if (isPerformingAction)
+            return;
+
+        if (Input.GetKeyDown(key_Parrying))
+        {
+            parryingInput = true;
+            weaponFX.Stop();
+            weaponFX.Play();
+        }
+
+        if (parryingInput)
+        {
+            curPerformingAction = States.Parrying;
+            parryingInput = false;
+
+            if (isTwoHandingWeapon)
+            {
+                // th parry
+                PlayActionAnimation("TH_Light_Attack_01", true);
+                attackLastPerformed = th_Parry;
+            }
+            else
+            {
+                // oh parry
+                PlayActionAnimation("OH_Light_Attack_01", true);
+                attackLastPerformed = oh_Parry;
+            }
+        }
+    }
 
     private void HandleDodge()
     {
@@ -573,6 +628,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         */
         if (Input.GetKeyUp(key_Dodge))
         {
+            curPerformingAction = States.Dodge;
             if (moveAmount > 0)
             {
                 rollDirection = moveDirection;
@@ -610,6 +666,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                curPerformingAction = States.LightAttack;
                 animator.SetBool("isPerformingBackStep", false);
 
                 if (isTwoHandingWeapon)
