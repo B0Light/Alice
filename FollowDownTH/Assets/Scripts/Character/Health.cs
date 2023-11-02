@@ -8,13 +8,16 @@ public class Health : MonoBehaviour
 {
     public Gauge<float> health;
     [SerializeField] float maxHealth = 100f;
-    private MeshRenderer[] meshs;
+    protected MeshRenderer itemMesh;
+    protected SkinnedMeshRenderer skinnedMeshRenderer;
+    [SerializeField] private Color damagedColor;
 
     public bool isDead = false;
     public bool isDmg = false;
     protected virtual void Awake()
     {
-        meshs = GetComponentsInChildren<MeshRenderer>();
+        itemMesh = GetComponentInChildren<MeshRenderer>();
+        skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
     }
     // Start is called before the first frame update
     void Start()
@@ -49,8 +52,7 @@ public class Health : MonoBehaviour
         isDmg = true;
         health.Value -= dmg;
 
-        foreach (MeshRenderer mesh in meshs)
-            mesh.material.color = Color.red;
+        skinnedMeshRenderer.material.color = damagedColor;
 
         if (health.Value <= 0) { 
             isDead = true; 
@@ -61,13 +63,11 @@ public class Health : MonoBehaviour
 
         if(isDead == false)
         {
-            foreach (MeshRenderer mesh in meshs)
-                mesh.material.color = Color.white;
+            skinnedMeshRenderer.material.color = Color.white;
         }
         else
         {
-            foreach (MeshRenderer mesh in meshs)
-                mesh.material.color = Color.gray;
+            skinnedMeshRenderer.material.color = Color.gray;
             health.Value = 0;
         }
     }

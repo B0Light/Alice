@@ -14,11 +14,11 @@ public class PlayerLocomotionManager : MonoBehaviour
     public enum States
     {
         Idle,
-        LightAttack,
-        HeavyAttack,
+        HorizontalAttack,
+        VerticalAttack,
         ChargeAttack,
         Dodge,
-        Parrying,
+        Parry,
         Damaged,
     }
     public States curPerformingAction;
@@ -37,7 +37,9 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] bool isSprinting;
     [SerializeField] bool isRunning;
     [SerializeField] bool isWalking;
-    [SerializeField] bool isTwoHandingWeapon;
+
+    public bool isTwoHandingWeapon;
+
     [SerializeField] float rotationSpeed = 20f;
     [SerializeField] float sprintSpeed = 6f;
     [SerializeField] float runningSpeed = 4f;
@@ -99,17 +101,13 @@ public class PlayerLocomotionManager : MonoBehaviour
     string oh_Charge_Attack_02 = "OH_Charge_Attack_02_Wind_Up";
     string th_Charge_Attack_01 = "TH_Charge_Attack_01_Wind_Up";
     string th_Charge_Attack_02 = "TH_Charge_Attack_02_Wind_Up";
-
-    private string oh_Parry;
-    private string th_Parry;
     
     [SerializeField] private KeyCode key_Dodge = KeyCode.Space;
     [SerializeField] private KeyCode key_ChangeWeapon = KeyCode.Y;
     [SerializeField] private KeyCode key_Sprint = KeyCode.LeftShift;
     [SerializeField] private KeyCode key_ChargeAttack = KeyCode.Q;
     [SerializeField] private KeyCode key_MoveType = KeyCode.Tab;
-    [SerializeField] private KeyCode key_Targeting = KeyCode.R;
-    [SerializeField] private KeyCode key_Parrying = KeyCode.E;
+    [SerializeField] private KeyCode key_Targeting = KeyCode.E;
 
     private void Awake()
     {
@@ -132,6 +130,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         if (!isPerformingAction)
         {
             curPerformingAction = States.Idle;
+            animator.SetBool("isCombo", false);
         }
     }
 
@@ -325,7 +324,7 @@ public class PlayerLocomotionManager : MonoBehaviour
 
         if (lightAttackInput)
         {
-            curPerformingAction = States.LightAttack;
+            curPerformingAction = States.HorizontalAttack;
             lightAttackInput = false;
 
             if (isTwoHandingWeapon)
@@ -361,41 +360,22 @@ public class PlayerLocomotionManager : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    PlayActionAnimation("OH_Light_Attack_02", true);
+                    animator.SetBool("isCombo", true);
                     weaponFX.Stop();
                     weaponFX.Play();
                     attackLastPerformed = oh_Light_Attack_02;
                     return;
                 }
             }
-            else if (attackLastPerformed == oh_Light_Attack_02)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    PlayActionAnimation("OH_Light_Attack_01", true);
-                    weaponFX.Stop();
-                    weaponFX.Play();
-                    attackLastPerformed = oh_Light_Attack_01;
-                }
-            }
+            
             else if (attackLastPerformed == th_Light_Attack_01)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    PlayActionAnimation("TH_Light_Attack_02", true);
+                    animator.SetBool("isCombo", true);
                     weaponFX.Stop();
                     weaponFX.Play();
                     attackLastPerformed = th_Light_Attack_02;
-                }
-            }
-            else if (attackLastPerformed == th_Light_Attack_02)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    PlayActionAnimation("TH_Light_Attack_01", true);
-                    weaponFX.Stop();
-                    weaponFX.Play();
-                    attackLastPerformed = th_Light_Attack_01;
                 }
             }
         }
@@ -413,7 +393,7 @@ public class PlayerLocomotionManager : MonoBehaviour
 
         if (heavyAttackInput)
         {
-            curPerformingAction = States.HeavyAttack;
+            curPerformingAction = States.VerticalAttack;
             heavyAttackInput = false;
 
             if (isTwoHandingWeapon)
@@ -457,42 +437,23 @@ public class PlayerLocomotionManager : MonoBehaviour
             {
                 if (Input.GetMouseButtonUp(1))
                 {
-                    PlayActionAnimation("OH_Heavy_Attack_02", true);
+                    animator.SetBool("isCombo", true);
                     weaponFX.Stop();
                     weaponFX.Play();
                     attackLastPerformed = oh_Heavy_Attack_02;
-                }
-            }
-            else if (attackLastPerformed == oh_Heavy_Attack_02)
-            {
-                if (Input.GetMouseButtonUp(1))
-                {
-                    PlayActionAnimation("OH_Heavy_Attack_01", true);
-                    weaponFX.Stop();
-                    weaponFX.Play();
-                    attackLastPerformed = oh_Heavy_Attack_01;
                 }
             }
             else if (attackLastPerformed == th_Heavy_Attack_01)
             {
                 if (Input.GetMouseButtonUp(1))
                 {
-                    PlayActionAnimation("TH_Heavy_Attack_02", true);
+                    animator.SetBool("isCombo", true);
                     weaponFX.Stop();
                     weaponFX.Play();
                     attackLastPerformed = th_Heavy_Attack_02;
                 }
             }
-            else if (attackLastPerformed == th_Heavy_Attack_02)
-            {
-                if (Input.GetMouseButtonUp(1))
-                {
-                    PlayActionAnimation("TH_Heavy_Attack_01", true);
-                    weaponFX.Stop();
-                    weaponFX.Play();
-                    attackLastPerformed = th_Heavy_Attack_01;
-                }
-            }
+            
         }
     }
 
@@ -545,74 +506,24 @@ public class PlayerLocomotionManager : MonoBehaviour
                 {
                     if (Input.GetKeyDown(key_ChargeAttack))
                     {
-                        PlayActionAnimation("OH_Charge_Attack_02_Wind_Up", true);
+                        animator.SetBool("isCombo", true);
                         weaponChargeFX.Stop();
                         weaponChargeFX.Play();
                         attackLastPerformed = oh_Charge_Attack_02;
                     }
                 }
-                else if (attackLastPerformed == oh_Charge_Attack_02)
-                {
-                    if (Input.GetKeyDown(key_ChargeAttack))
-                    {
-                        PlayActionAnimation("OH_Charge_Attack_01_Wind_Up", true);
-                        weaponChargeFX.Stop();
-                        weaponChargeFX.Play();
-                        attackLastPerformed = oh_Charge_Attack_01;
-                    }
-                }
+                
                 else if (attackLastPerformed == th_Charge_Attack_01)
                 {
                     if (Input.GetKeyDown(key_ChargeAttack))
                     {
-                        PlayActionAnimation("TH_Charge_Attack_02_Wind_Up", true);
+                        animator.SetBool("isCombo", true);
                         weaponChargeFX.Stop();
                         weaponChargeFX.Play();
                         attackLastPerformed = th_Charge_Attack_02;
                     }
                 }
-                else if (attackLastPerformed == th_Charge_Attack_02)
-                {
-                    if (Input.GetKeyDown(key_ChargeAttack))
-                    {
-                        PlayActionAnimation("TH_Charge_Attack_01_Wind_Up", true);
-                        weaponChargeFX.Stop();
-                        weaponChargeFX.Play();
-                        attackLastPerformed = th_Charge_Attack_01;
-                    }
-                }
-            }
-        }
-    }
-    
-    private void HandleParrying()
-    {
-        if (isPerformingAction)
-            return;
-
-        if (Input.GetKeyDown(key_Parrying))
-        {
-            parryingInput = true;
-            weaponFX.Stop();
-            weaponFX.Play();
-        }
-
-        if (parryingInput)
-        {
-            curPerformingAction = States.Parrying;
-            parryingInput = false;
-
-            if (isTwoHandingWeapon)
-            {
-                // th parry
-                PlayActionAnimation("TH_Light_Attack_01", true);
-                attackLastPerformed = th_Parry;
-            }
-            else
-            {
-                // oh parry
-                PlayActionAnimation("OH_Light_Attack_01", true);
-                attackLastPerformed = oh_Parry;
+                
             }
         }
     }
@@ -666,7 +577,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                curPerformingAction = States.LightAttack;
+                curPerformingAction = States.HorizontalAttack;
                 animator.SetBool("isPerformingBackStep", false);
 
                 if (isTwoHandingWeapon)

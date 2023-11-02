@@ -158,13 +158,8 @@ public class BossAttackManager : MonoBehaviour
 
     private void PlayActionAnimation(string animation, bool isPerformingAction)
     {
-        if(this.isPerformingAction)
-            animator.CrossFade(animation, 1.5f);
-        else
-            animator.CrossFade(animation, 0.2f);
-        
         animator.SetBool("isPerformingAction", isPerformingAction);
-        
+        animator.CrossFade(animation, 0.2f);
     }
 
     private void OnAnimatorMove()
