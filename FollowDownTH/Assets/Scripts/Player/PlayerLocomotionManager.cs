@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 public class PlayerLocomotionManager : MonoBehaviour
 {
     Animator animator;
-    Rigidbody playerRigidBody;
+    private CharacterController characterController;
 
     public enum States
     {
@@ -52,6 +52,10 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] bool isPerformingBackStep;
     Vector3 moveDirection;
     Vector3 planeNormal;
+
+    [Header("ScenePhase2")]
+    public bool isSleep;
+    public bool isPlayerActive;
 
     //CAMERA VARIABLES
     [Header("Camera")]
@@ -113,7 +117,7 @@ public class PlayerLocomotionManager : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        playerRigidBody = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
     }
 
     private void Start()
@@ -718,29 +722,22 @@ public class PlayerLocomotionManager : MonoBehaviour
         moveDirection = cameraObject.transform.forward * verticalMovement;
         moveDirection = moveDirection + cameraObject.transform.right * horizontalMovement;
         moveDirection.Normalize();
-        moveDirection.y = 0;
+        //moveDirection.y = 0;
 
         if (isSprinting)
         {
             moveDirection = moveDirection * sprintSpeed;
-            Vector3 projectedVelcocity = Vector3.ProjectOnPlane(moveDirection, planeNormal);
-            playerRigidBody.velocity = projectedVelcocity;
-            return;
         }
         else if (isRunning)
         {
             moveDirection = moveDirection * runningSpeed;
-            Vector3 projectedVelcocity = Vector3.ProjectOnPlane(moveDirection, planeNormal);
-            playerRigidBody.velocity = projectedVelcocity;
-            return;
         }
         else if (isWalking)
         {
             moveDirection = moveDirection * walkingSpeed;
-            Vector3 projectedVelcocity = Vector3.ProjectOnPlane(moveDirection, planeNormal);
-            playerRigidBody.velocity = projectedVelcocity;
-            return;
         }
+
+        characterController.Move(moveDirection * Time.deltaTime);
     }
 
     private void HandleCameraActions()
@@ -784,6 +781,18 @@ public class PlayerLocomotionManager : MonoBehaviour
             isLockOn ? quaternion.identity: targetCameraRotation;
     }
 
+    public void FollowDownTheRabbitHole()
+    {
+        PlayActionAnimation("FallDown", true);
+        StartCoroutine(WakeUp());
+    }
+
+    IEnumerator WakeUp()
+    {
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("isSleep",false);
+    }
+    
     private void CursorLock()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -800,17 +809,5 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         animator.SetBool("isPerformingAction", isPerformingAction);
         animator.CrossFade(animation, 0.2f);
-    }
-
-    private void OnAnimatorMove()
-    {
-        if (isPerformingAction)
-        {
-            playerRigidBody.drag = 0;
-            Vector3 deltaPosition = animator.deltaPosition;
-            deltaPosition.y = 0;
-            Vector3 velocity = deltaPosition / Time.deltaTime;
-            playerRigidBody.velocity = velocity;
-        }
     }
 }

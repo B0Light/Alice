@@ -37,10 +37,6 @@ public class BossAttackManager : MonoBehaviour
     public float fireRate = 0.1f;
     public Vector2 uiOffset = new Vector2(0,1);
 
-    [Space]
-    [Header("Camera Shaker script")]
-    public CameraShaker cameraShaker;
-
     private void Start()
     {
         _bossManager = GetComponent<BossManager>();
@@ -126,8 +122,7 @@ public class BossAttackManager : MonoBehaviour
             Effect = prefabCast.GetComponent<ParticleSystem>();
             Effect.Play();
             
-            if(cameraShaker)
-                StartCoroutine(cameraShaker.Shake(0.1f, 2, 0.2f, 0));
+            //StartCoroutine(CameraShaker.Instance.Shake(0.1f, 2, 0.2f, 0));
             isReady = false;
             yield return new WaitForSeconds(fireCooldown);
         }

@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Stamina : MonoBehaviour
 {
-
+    public bool isRecoverable;
     public Gauge<float> stamina;
     [SerializeField] float maxStamina = 100f;
 
-    void Start()
+    protected virtual void Start()
     {
         stamina = new Gauge<float>(maxStamina);
     }
 
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
+        if(isRecoverable)
         {
             RecoverStamina(0.5f);
         }
     }
 
-    private void RecoverStamina(float value)
+    protected void RecoverStamina(float value)
     {
         if(stamina.Value < maxStamina)
         {
