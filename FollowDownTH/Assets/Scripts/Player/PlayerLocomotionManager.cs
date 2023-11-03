@@ -30,8 +30,9 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] float mouseX;
     [SerializeField] float mouseY;
 
+    [Header("Ability")] 
+    public bool isAttackAbility;
     //PLAYER VARIABLES
-    [FormerlySerializedAs("isStrafing")]
     [Header("Player")]
     [SerializeField] bool isLockOn;
     [SerializeField] bool isSprinting;
@@ -261,10 +262,14 @@ public class PlayerLocomotionManager : MonoBehaviour
         HandleSprint();
         HandleWalkOrRun();
         HandleLockOn();
-        HandleTwoHand();
-        HandleLightAttack();
-        HandleHeavyAttack();
-        HandleChargeAttack();
+        if (isAttackAbility)
+        {
+            HandleTwoHand();
+            HandleLightAttack();
+            HandleHeavyAttack();
+            HandleChargeAttack();
+        }
+        
 
         if (Input.GetKey(KeyCode.W))
         {

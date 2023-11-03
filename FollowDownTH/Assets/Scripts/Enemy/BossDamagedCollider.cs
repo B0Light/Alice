@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BossDamagedCollider : MonoBehaviour
 {
-    [SerializeField] private float damagedCoefficient = 1.0f;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlayerWeapon"))

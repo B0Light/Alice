@@ -1,0 +1,1539 @@
+Unity Editor version:    2021.3.30f1 (b4360d7cdac4)
+Branch:                  2021.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 14.0 (Build 23A344)
+Darwin version:          23.0.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        16384 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2021.3.30f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+/Users/jangbogwang/Documents/GitHub/Alice/FollowDownTH
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+56037
+Successfully changed project path to: /Users/jangbogwang/Documents/GitHub/Alice/FollowDownTH
+/Users/jangbogwang/Documents/GitHub/Alice/FollowDownTH
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8011240192] Host "[IP] 192.168.0.14 [Port] 0 [Flags] 2 [Guid] 536410948 [EditorId] 536410948 [Version] 1048832 [Id] OSXEditor(0,jangbogwang-ui-MacBookPro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [8011240192] Host "[IP] 192.168.0.14 [Port] 0 [Flags] 2 [Guid] 536410948 [EditorId] 536410948 [Version] 1048832 [Id] OSXEditor(0,jangbogwang-ui-MacBookPro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
+Refreshing native plugins compatible for Editor in 268.06 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.30f1 (b4360d7cdac4)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.3.30f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/jangbogwang/Documents/GitHub/Alice/FollowDownTH/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+ preferred device: Apple M1 Pro (high power)
+Metal devices available: 1
+0: Apple M1 Pro (high power)
+Using device Apple M1 Pro (high power)
+Initializing Metal device caps: Apple M1 Pro
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2021.3.30f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2021.3.30f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/2021.3.30f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56243
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.30f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.30f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.30f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000637 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 296.63 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.641 seconds
+Domain Reload Profiling:
+	ReloadAssembly (642ms)
+		BeginReloadAssembly (41ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (541ms)
+			LoadAssemblies (40ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (81ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (404ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (297ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (76ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002328 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 292.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  1.490 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1490ms)
+		BeginReloadAssembly (66ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (14ms)
+		EndReloadAssembly (1356ms)
+			LoadAssemblies (40ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (212ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (1007ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (292ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (606ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (2ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2021.3.30f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
+Refreshing native plugins compatible for Editor in 2.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5249 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 57 unused Assets / (1.5 MB). Loaded Objects now: 5723.
+Memory consumption went from 347.4 MB to 345.9 MB.
+Total: 2.590458 ms (FindLiveObjects: 0.167750 ms CreateObjectMapping: 0.060209 ms MarkObjects: 2.058666 ms  DeleteObjects: 0.303208 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 38257.466231 seconds.
+  path: Assets/Synty/PolygonFantasyKingdom/Prefabs/Environments/SM_Env_Tree_Dead_01.prefab
+  artifactKey: Guid(083e710e1692a3a49ab0410e22780f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonFantasyKingdom/Prefabs/Environments/SM_Env_Tree_Dead_01.prefab using Guid(083e710e1692a3a49ab0410e22780f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a29bda21dca95418c4f7ea0c692b82e') in 0.233629 seconds 
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.080091 seconds.
+  path: Assets/Synty/PolygonFantasyKingdom/Prefabs/Environments/SM_Env_Tree_Dead_04.prefab
+  artifactKey: Guid(2f9f7196dbd6f6846bba6eaa7cb39096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonFantasyKingdom/Prefabs/Environments/SM_Env_Tree_Dead_04.prefab using Guid(2f9f7196dbd6f6846bba6eaa7cb39096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c307d5423554a6554a98ccd38824338b') in 0.029242 seconds 
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.496358 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Tree_Dead_Windswept_01.prefab
+  artifactKey: Guid(e7045812ae5453b40adc0882141d4101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Tree_Dead_Windswept_01.prefab using Guid(e7045812ae5453b40adc0882141d4101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a0d366a7fbaaa4303bce47ec08c938b') in 0.052849 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.984432 seconds.
+  path: Assets/Synty/PolygonAncientEmpire/Prefabs/Environment/SM_Env_Tree_Large_02.prefab
+  artifactKey: Guid(241c283ce29d1c448bb2aded6278a24f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonAncientEmpire/Prefabs/Environment/SM_Env_Tree_Large_02.prefab using Guid(241c283ce29d1c448bb2aded6278a24f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0b45d0705b5820a93af2499eb965d63') in 0.054218 seconds 
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.857103 seconds.
+  path: Assets/Synty/PolygonAncientEmpire/Prefabs/Environment/SM_Env_Tree_Palm_01.prefab
+  artifactKey: Guid(720a715495233354197cde731a9a7d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonAncientEmpire/Prefabs/Environment/SM_Env_Tree_Palm_01.prefab using Guid(720a715495233354197cde731a9a7d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4372e9ee1c8ff74c76148796ed6eb823') in 0.035843 seconds 
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.460662 seconds.
+  path: Assets/Synty/PolygonHorrorMansion/Prefabs/Environment/SM_Env_Tree_Large_Twisted_01.prefab
+  artifactKey: Guid(da57fa6f9a3dbc844a3366a2ab7cef9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonHorrorMansion/Prefabs/Environment/SM_Env_Tree_Large_Twisted_01.prefab using Guid(da57fa6f9a3dbc844a3366a2ab7cef9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa5a9fdccbea307763dc5e0a64febc30') in 0.046955 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 1.008628 seconds.
+  path: Assets/Synty/PolygonFantasyKingdom/Prefabs/Environments/SM_Env_Tree_Thin_01.prefab
+  artifactKey: Guid(af8a3b23c35a0794ebbde20b219374b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonFantasyKingdom/Prefabs/Environments/SM_Env_Tree_Thin_01.prefab using Guid(af8a3b23c35a0794ebbde20b219374b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0cd0f0a832457b59361d7fddd220ba5') in 0.023728 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 1.066840 seconds.
+  path: Assets/Synty/PolygonApocalypse/Prefabs/Environment/SM_Env_Tree_Pine_Tall_01.prefab
+  artifactKey: Guid(8f3c2b79887cfc44c98b550b0b5da119) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonApocalypse/Prefabs/Environment/SM_Env_Tree_Pine_Tall_01.prefab using Guid(8f3c2b79887cfc44c98b550b0b5da119) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c23167cad1043dcdc50cb6cb63b141b8') in 0.027971 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.714842 seconds.
+  path: Assets/Synty/PolygonApocalypse/Prefabs/Environment/SM_Env_Tree_Pine_Cluster_03.prefab
+  artifactKey: Guid(c0718ad816766f34abd3af599e2ab633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonApocalypse/Prefabs/Environment/SM_Env_Tree_Pine_Cluster_03.prefab using Guid(c0718ad816766f34abd3af599e2ab633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a887d61963bf421d6348cf8d188f447b') in 0.032294 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.461172 seconds.
+  path: Assets/Synty/PolygonFantasyKingdom/Prefabs/Environments/SM_Env_Tree_Pine_Cluster_04.prefab
+  artifactKey: Guid(4fed94019beb9b64abb39e186d48777e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonFantasyKingdom/Prefabs/Environments/SM_Env_Tree_Pine_Cluster_04.prefab using Guid(4fed94019beb9b64abb39e186d48777e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b835bcd05799df410d506eb0e0de653') in 0.023577 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 1.161822 seconds.
+  path: Assets/Synty/PolygonPrototype/Prefabs/Generic/SM_Generic_Tree_01.prefab
+  artifactKey: Guid(408f59ce148892a4480e8987e8a029b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonPrototype/Prefabs/Generic/SM_Generic_Tree_01.prefab using Guid(408f59ce148892a4480e8987e8a029b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efac01e81f0d8933ff2814ada05c7b81') in 0.014612 seconds 
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.889342 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Generic/SM_Generic_Tree_03.prefab
+  artifactKey: Guid(09b3307f28c18844489176b25b356a13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Generic/SM_Generic_Tree_03.prefab using Guid(09b3307f28c18844489176b25b356a13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3098fde0b7f8c8a36c4e67b9fcde87a6') in 0.028700 seconds 
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.536207 seconds.
+  path: Assets/Synty/PolygonOffice/Prefabs/Generic/SM_Generic_TreeDead_01.prefab
+  artifactKey: Guid(d2d93f1bbce4b6c4a8cbe3fe3054be36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonOffice/Prefabs/Generic/SM_Generic_TreeDead_01.prefab using Guid(d2d93f1bbce4b6c4a8cbe3fe3054be36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91c113f5d86c29ecc9081d5b4bcca84c') in 0.019083 seconds 
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.737875 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Generic/SM_Generic_TreeStump_01.prefab
+  artifactKey: Guid(4530e9878611f774d89a69857186a26e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Generic/SM_Generic_TreeStump_01.prefab using Guid(4530e9878611f774d89a69857186a26e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc90e5a2a1e7dfb699aa761ebf0967d7') in 0.029480 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.624058 seconds.
+  path: Assets/Synty/PolygonPrototype/Prefabs/Generic/SM_Generic_TreeDead_01.prefab
+  artifactKey: Guid(a48c66cea6b296343a9a954ab39c7cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonPrototype/Prefabs/Generic/SM_Generic_TreeDead_01.prefab using Guid(a48c66cea6b296343a9a954ab39c7cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '862dfe6862736bd4818f18e80cfc6092') in 0.014360 seconds 
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 4.12 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 38 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 56 unused Assets / (1.6 MB). Loaded Objects now: 5821.
+Memory consumption went from 235.4 MB to 233.8 MB.
+Total: 3.181542 ms (FindLiveObjects: 0.209041 ms CreateObjectMapping: 0.066292 ms MarkObjects: 2.690958 ms  DeleteObjects: 0.214750 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:CustomObjectIndexerAttribute: f67f22312cbe972f2da930a377ed3d15 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 9.756595 seconds.
+  path: Assets/Synty/PolygonApocalypse/Prefabs/Generic/SM_Generic_TreeDead_01.prefab
+  artifactKey: Guid(ddf1dea042d8f3d42a7f813667437cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonApocalypse/Prefabs/Generic/SM_Generic_TreeDead_01.prefab using Guid(ddf1dea042d8f3d42a7f813667437cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac20405de40510c95e6d6d197e5a269d') in 0.038816 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.491470 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Generic/SM_Generic_TreeDead_01.prefab
+  artifactKey: Guid(22e166fb54766d642af59451ff2bab35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Generic/SM_Generic_TreeDead_01.prefab using Guid(22e166fb54766d642af59451ff2bab35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8ee4b5030ce0574f54f530a738cc518') in 0.033770 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 1.742301 seconds.
+  path: Assets/Synty/PolygonOffice/Prefabs/Generic/SM_Generic_TreeStump_01.prefab
+  artifactKey: Guid(9dc65a04999729a469653a97f1ec2eb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonOffice/Prefabs/Generic/SM_Generic_TreeStump_01.prefab using Guid(9dc65a04999729a469653a97f1ec2eb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45cecd78fe912b7b1e0ec05c8ccfd300') in 0.021157 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.207733 seconds.
+  path: Assets/Synty/PolygonFantasyKingdom/Prefabs/Generic/SM_Generic_TreeStump_01.prefab
+  artifactKey: Guid(e02cf2ee8d0ab1d458be20224b369056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonFantasyKingdom/Prefabs/Generic/SM_Generic_TreeStump_01.prefab using Guid(e02cf2ee8d0ab1d458be20224b369056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725ad0df2a3b7b1cff6767270f2ac620') in 0.027918 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.122666 seconds.
+  path: Assets/Synty/PolygonApocalypse/Prefabs/Generic/SM_Generic_TreeStump_01.prefab
+  artifactKey: Guid(bff2e4d1b38f7264b9a067e055e3e986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonApocalypse/Prefabs/Generic/SM_Generic_TreeStump_01.prefab using Guid(bff2e4d1b38f7264b9a067e055e3e986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd081450bb95cb1a6c7ef13d755e980f9') in 0.027558 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 72.386918 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Scenes
+  artifactKey: Guid(98b5860775ecdaa429e5515a9e40f37e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Scenes using Guid(98b5860775ecdaa429e5515a9e40f37e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88868409584fc96a87ab3771f2f405ba') in 0.002033 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.851201 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Materials
+  artifactKey: Guid(e3d27d870e5cae1418379935ffcef890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Materials using Guid(e3d27d870e5cae1418379935ffcef890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a2bfa1f3fe355982a6d65f01c1a9e24') in 0.002092 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.563717 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs
+  artifactKey: Guid(357e0d23373bb984f811143003e8ec4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs using Guid(357e0d23373bb984f811143003e8ec4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84c2f3a1465baa0530928fefad064cbf') in 0.001607 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.792219 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments
+  artifactKey: Guid(acedd9927f403494c842f86fbdd6e91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments using Guid(acedd9927f403494c842f86fbdd6e91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5934e096c649ae394910eb3ccae8db8') in 0.001848 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 62.891413 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Tiles_Loose_05.prefab
+  artifactKey: Guid(5950f32cf2be89c47990c1e2bd86bbe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Tiles_Loose_05.prefab using Guid(5950f32cf2be89c47990c1e2bd86bbe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8330cff30725cfc407bd6c8f2f99c01') in 0.034370 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.593858 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Tiles_Loose_02.prefab
+  artifactKey: Guid(18d9f607b4b1ea145b2126392a3a97ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Tiles_Loose_02.prefab using Guid(18d9f607b4b1ea145b2126392a3a97ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e21adf5f42c812464086481a1050a137') in 0.040920 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.437134 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Tiles_Loose_03.prefab
+  artifactKey: Guid(8028356640135ea4a889180a2ab858f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Tiles_Loose_03.prefab using Guid(8028356640135ea4a889180a2ab858f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52498aa61a21e2b388ad014327655f4d') in 0.032486 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.879706 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Statue_Broken_06.prefab
+  artifactKey: Guid(20310d3152a5abe45b645d41ec5cc8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Statue_Broken_06.prefab using Guid(20310d3152a5abe45b645d41ec5cc8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '890ff44db6fc904c3f33086721e43134') in 0.031452 seconds 
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.373230 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Statue_Broken_05.prefab
+  artifactKey: Guid(8253782e41d1a6d4ba4b07cac84b60e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Statue_Broken_05.prefab using Guid(8253782e41d1a6d4ba4b07cac84b60e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffbc972195ca40dd781d52765b2dc50a') in 0.037236 seconds 
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.130297 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Statue_Broken_02.prefab
+  artifactKey: Guid(45901242e5deb4146b4944ac006501fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Statue_Broken_02.prefab using Guid(45901242e5deb4146b4944ac006501fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2057661b80227c387edf4825e580b865') in 0.049218 seconds 
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.759218 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rubble_Rocks_02.prefab
+  artifactKey: Guid(e3f914b5c19523a44aeb69eb56fa94bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rubble_Rocks_02.prefab using Guid(e3f914b5c19523a44aeb69eb56fa94bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d6c22baeeae9c1b1d6ffa89a0d766f9') in 0.037498 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.949442 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rubble_Pillar_02.prefab
+  artifactKey: Guid(b4ed5cd6767edf94daf3c7bd23457fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rubble_Pillar_02.prefab using Guid(b4ed5cd6767edf94daf3c7bd23457fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85ff8c93a5b05e6b5f781d097f731a1d') in 0.033095 seconds 
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.771450 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rubble_Rocks_03.prefab
+  artifactKey: Guid(398af32a3423bd840b25d0c6842b7874) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rubble_Rocks_03.prefab using Guid(398af32a3423bd840b25d0c6842b7874) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22c9a1ff160dc7a3808d1ce07ebf08a6') in 0.031156 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.748070 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rock_Small_02.prefab
+  artifactKey: Guid(fa04c20e383fe38478963d2d2b0205fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rock_Small_02.prefab using Guid(fa04c20e383fe38478963d2d2b0205fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b05229f9d7f7446c15352569fd7e9c42') in 0.029027 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.451864 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rock_Small_04.prefab
+  artifactKey: Guid(5c83cb0af798dd94bbaaee46b87c3b8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rock_Small_04.prefab using Guid(5c83cb0af798dd94bbaaee46b87c3b8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0364441552b23307d9f4b1a4cd82ee25') in 0.033336 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.680170 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rock_Obelisk_01.prefab
+  artifactKey: Guid(bd7ccc7d1ad746847a5c673221bdd232) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Rock_Obelisk_01.prefab using Guid(bd7ccc7d1ad746847a5c673221bdd232) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '496828329c9b77cd0e1c59e1f9172ab1') in 0.031709 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.715268 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Plant_Spikey_01.prefab
+  artifactKey: Guid(97fc0fa4be7eeaf48bc505924221f2bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Plant_Spikey_01.prefab using Guid(97fc0fa4be7eeaf48bc505924221f2bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a32bccc978f3425eeaeeccf66024d3d5') in 0.032757 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.820811 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Spikes_06.prefab
+  artifactKey: Guid(99104113e60aced47bfd36eb0758c6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Spikes_06.prefab using Guid(99104113e60aced47bfd36eb0758c6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f42ac7a609e876142fb239ae9c570d2') in 0.028623 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.851322 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Rock_02.prefab
+  artifactKey: Guid(47eb2556e91c61549b8efa43e8d534fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Rock_02.prefab using Guid(47eb2556e91c61549b8efa43e8d534fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c640b426a40ab5fcd403f529e4d65322') in 0.028456 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.546421 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Rock_04.prefab
+  artifactKey: Guid(a72364b64b3334b428d4de5c934a26c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Rock_04.prefab using Guid(a72364b64b3334b428d4de5c934a26c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0eae17bba125a808ea4f2aaf9a95bd7') in 0.036675 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.741331 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Ground_03.prefab
+  artifactKey: Guid(2d2f0e23c0daa564eabf5c4feaa85105) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Ground_03.prefab using Guid(2d2f0e23c0daa564eabf5c4feaa85105) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1138372063b9a50b4e60f86a95866685') in 0.033992 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.445414 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Ground_01.prefab
+  artifactKey: Guid(63225b1817d58a342ad564b15a425f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Ground_01.prefab using Guid(63225b1817d58a342ad564b15a425f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4d707e3337bcc1f217a72a520717e21') in 0.030370 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 1.500081 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Bone_Hand_R_01.prefab
+  artifactKey: Guid(e28c21f05c6bd6540b5423d8a14ea570) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Bone_Hand_R_01.prefab using Guid(e28c21f05c6bd6540b5423d8a14ea570) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '638b4074b2886e2f2b421ce631fc0af7') in 0.033617 seconds 
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.546702 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Chains_02.prefab
+  artifactKey: Guid(35ab25eaae2ce3b4da8e82bb50d4691d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Hell_Chains_02.prefab using Guid(35ab25eaae2ce3b4da8e82bb50d4691d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c0ba044911e8b7c39628a5f3ad769ea') in 0.033025 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 1.210856 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Window_01.prefab
+  artifactKey: Guid(711357aa96cf8e44da9e01f3bff100c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Window_01.prefab using Guid(711357aa96cf8e44da9e01f3bff100c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f94b58bbd073e04f487463fc25bd23cf') in 0.033481 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 1.250853 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Trim_01.prefab
+  artifactKey: Guid(802bc6e647330e544a1f83708ae0fe13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Trim_01.prefab using Guid(802bc6e647330e544a1f83708ae0fe13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b701bdfc091ddf51685d903c894a9fa') in 0.032802 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.609929 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Short_03.prefab
+  artifactKey: Guid(1ebd5b3b0d67cb14586ec52577312fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Short_03.prefab using Guid(1ebd5b3b0d67cb14586ec52577312fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '846b4e964a2731631aa272db4614d72a') in 0.030746 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.767812 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Broken_06.prefab
+  artifactKey: Guid(0d7e4298766e1cb4d824ef3e169853df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Broken_06.prefab using Guid(0d7e4298766e1cb4d824ef3e169853df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '599b76f6f511eb8d38f2c72c769de029') in 0.031937 seconds 
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.851725 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Archway_Top_02.prefab
+  artifactKey: Guid(d8722260d579553459c6ac3f30b97f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_Archway_Top_02.prefab using Guid(d8722260d579553459c6ac3f30b97f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b932d8585742ec370000b6b2064c5d3') in 0.029679 seconds 
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 0.758831 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_02.prefab
+  artifactKey: Guid(1f507fc5e624d6e4aa3c2ff951f4bcf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Wall_02.prefab using Guid(1f507fc5e624d6e4aa3c2ff951f4bcf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52aa9f60bf964834176c3993f88233eb') in 0.035616 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.922478 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Pillar_Top_02.prefab
+  artifactKey: Guid(88a31ff511917dd4b88442992f85ee59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Pillar_Top_02.prefab using Guid(88a31ff511917dd4b88442992f85ee59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3832652c48e00948ad4c1018b0970c4f') in 0.031189 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.690655 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Pillar_Top_03.prefab
+  artifactKey: Guid(d400fa9ab2ef11c4b9ab51947dc2f09d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Pillar_Top_03.prefab using Guid(d400fa9ab2ef11c4b9ab51947dc2f09d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9465207dcca446b9a5741641ad66608e') in 0.035684 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.693353 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Pillar_Base_05.prefab
+  artifactKey: Guid(8c82f9c90e9adbc4e9abbe02da7c74e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Pillar_Base_05.prefab using Guid(8c82f9c90e9adbc4e9abbe02da7c74e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f500b5c8e509afdb1c142d85aad5a9ef') in 0.038407 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.563205 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Pillar_Base_03.prefab
+  artifactKey: Guid(7ec7c20731a8414459e426abb345cee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Pillar_Base_03.prefab using Guid(7ec7c20731a8414459e426abb345cee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd46f5c94927d96097b37cb72a606be8f') in 0.036554 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.921933 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Lava_Wheel_01.prefab
+  artifactKey: Guid(0db82ac67fdae2f479df6eadfc496889) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Lava_Wheel_01.prefab using Guid(0db82ac67fdae2f479df6eadfc496889) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b763f4a9d8a7efca1115c242e7694a') in 0.032741 seconds 
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.755511 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Smelter_02.prefab
+  artifactKey: Guid(1ea9cea7922ee764dac4fc80a4a535ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Smelter_02.prefab using Guid(1ea9cea7922ee764dac4fc80a4a535ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3431757a9404ba342eeb297ab0ea41c4') in 0.032956 seconds 
+Number of asset objects unloaded after import = 35
+========================================================================
+Received Import Request.
+  Time since last request: 1.422040 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Floor_Half_02.prefab
+  artifactKey: Guid(456203b9df9bd17428463eb5952c9a86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Floor_Half_02.prefab using Guid(456203b9df9bd17428463eb5952c9a86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd76fc337dba0e54c645b217fbcded563') in 0.033090 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.606782 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_01.prefab
+  artifactKey: Guid(bfb548e7b688dfb47bb8a53b918aa032) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_01.prefab using Guid(bfb548e7b688dfb47bb8a53b918aa032) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dd418ab6ea7441914c94e305720f9f0') in 0.036255 seconds 
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.488766 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Beam_01.prefab
+  artifactKey: Guid(73898fd39e702704cab93d5c69076564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Beam_01.prefab using Guid(73898fd39e702704cab93d5c69076564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f65eaf666ed48abb297187052f6366e3') in 0.038304 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 10.718968 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Gutter_Straight_01.prefab
+  artifactKey: Guid(cdbf9080c61ca9146a2288c5b3f83a87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Gutter_Straight_01.prefab using Guid(cdbf9080c61ca9146a2288c5b3f83a87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45fda46e16044df6057f5d899a228f1e') in 0.034443 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.577060 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Gutter_Straight_02.prefab
+  artifactKey: Guid(cf15a33d8e66d8d45b226d7ab8caac58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Gutter_Straight_02.prefab using Guid(cf15a33d8e66d8d45b226d7ab8caac58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c17a7bb88c6a44ec66904ae82b4401b') in 0.032673 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 1.147299 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Gutter_Corner_01.prefab
+  artifactKey: Guid(0bab8f8178442234fa42818bb563829b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Gutter_Corner_01.prefab using Guid(0bab8f8178442234fa42818bb563829b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb9b83222f9122c859db0c27c27190af') in 0.037254 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 1.213108 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Gutter_Straight_Half_01 1.prefab
+  artifactKey: Guid(d9c4530f6a34a5f428f98c01b1347996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Gutter_Straight_Half_01 1.prefab using Guid(d9c4530f6a34a5f428f98c01b1347996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cdd758d0a32830b1183a95925ac830b') in 0.036358 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.370270 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Smelter_01.prefab
+  artifactKey: Guid(e38defb93c3160441af64e1c19cd5efd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Forge_Smelter_01.prefab using Guid(e38defb93c3160441af64e1c19cd5efd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd4def086f75dd4b7ba11fa40072d005') in 0.032681 seconds 
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 12.423593 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Floor_20.prefab
+  artifactKey: Guid(d9f2f474eb1965f4bb702d045bb9d2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Floor_20.prefab using Guid(d9f2f474eb1965f4bb702d045bb9d2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '367323ba859c7a2477412c3c1c494ea6') in 0.033368 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.669669 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Floor_01.prefab
+  artifactKey: Guid(355126364ffea3e4ebe5826e6b2d19c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Floor_01.prefab using Guid(355126364ffea3e4ebe5826e6b2d19c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4dae31faa3761905cc9d96ca347b8eb') in 0.033882 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.806559 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Balustrade_03.prefab
+  artifactKey: Guid(51bdebe41cd205a4ebfd300d42da95d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Balustrade_03.prefab using Guid(51bdebe41cd205a4ebfd300d42da95d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33d753609f644a8f8ffa20396490593d') in 0.033085 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.652475 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dust_04.prefab
+  artifactKey: Guid(e7a579807cf88aa4587da8f125b48974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dust_04.prefab using Guid(e7a579807cf88aa4587da8f125b48974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ec3b7610da82df6088dfc3b99589cc2') in 0.034378 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.609981 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Camp_Well_01.prefab
+  artifactKey: Guid(cfc9573ae38fc79419a8512559402ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Camp_Well_01.prefab using Guid(cfc9573ae38fc79419a8512559402ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d119eda61043e98df495bf22583eaf8') in 0.034617 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.487916 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bramble_01.prefab
+  artifactKey: Guid(8b4f36b4159c2b54485db28da3403a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bramble_01.prefab using Guid(8b4f36b4159c2b54485db28da3403a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '903823f9eb798a1affcde44318994b81') in 0.029798 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.747418 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bone_Rib_05.prefab
+  artifactKey: Guid(2a4503883d5001b488590305c2e38787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bone_Rib_05.prefab using Guid(2a4503883d5001b488590305c2e38787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73151a4f7aec3f6d13bae597eeeff6fd') in 0.034092 seconds 
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 1.046962 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bone_Rib_03.prefab
+  artifactKey: Guid(5a918ff39dacf9440b417568f0ffd42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bone_Rib_03.prefab using Guid(5a918ff39dacf9440b417568f0ffd42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e646789c09aa10891c1ac7ba7e7ff9e') in 0.033415 seconds 
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.620416 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bramble_02.prefab
+  artifactKey: Guid(8c73641373f39e842b21f84d113028e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bramble_02.prefab using Guid(8c73641373f39e842b21f84d113028e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8dd65ae7ac3a3506a66c1e0d1296f9b') in 0.031775 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.387274 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bramble_03.prefab
+  artifactKey: Guid(315d0774aac09674a8f427ec9eae871d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Bramble_03.prefab using Guid(315d0774aac09674a8f427ec9eae871d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2b86d2f96d82a1b0596fd7e1fd3e1e4') in 0.034784 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.605982 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dust_01.prefab
+  artifactKey: Guid(005b6dc7d2868f14abfe66e4d2c105f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dust_01.prefab using Guid(005b6dc7d2868f14abfe66e4d2c105f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd316fc6e0d8d7186ce1442d919f7a10b') in 0.033626 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.295034 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Crystals_Cluster_Large_03.prefab
+  artifactKey: Guid(b2f83ac58e9a78c419d2418cd7162312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Crystals_Cluster_Large_03.prefab using Guid(b2f83ac58e9a78c419d2418cd7162312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac9340421bead24cff052639113b827a') in 0.019144 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 1.452019 seconds.
+  path: Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Balustrade_02_Broken_01.prefab
+  artifactKey: Guid(72c274cca27e6ae43bf23fa413aa65d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonDungeonRealms/Prefabs/Environments/SM_Env_Dwarf_Balustrade_02_Broken_01.prefab using Guid(72c274cca27e6ae43bf23fa413aa65d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28c609115459099a88420f7c82ff605f') in 0.037137 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 12.110141 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs
+  artifactKey: Guid(bd610ec1d21e5c34786f0ac6a9006470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs using Guid(bd610ec1d21e5c34786f0ac6a9006470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eead8524aebdcaab96733dd1e7900648') in 0.002098 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.128896 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees
+  artifactKey: Guid(f30e9b1d9c7713a4db07553050258c66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees using Guid(f30e9b1d9c7713a4db07553050258c66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5608fb839f3d88d6b9f3fd937fdd4ba9') in 0.001525 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.880535 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Rocks
+  artifactKey: Guid(4657dc1c569202d49a7bc8645a751ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Rocks using Guid(4657dc1c569202d49a7bc8645a751ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81e63b926a81f0861ff38e44b333e674') in 0.001185 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.698712 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_02.prefab
+  artifactKey: Guid(fe8147825b813cf46b4ef685a3ea56a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_02.prefab using Guid(fe8147825b813cf46b4ef685a3ea56a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49d147f9ccdb481a1106c2c2969ea082') in 0.066007 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.389294 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_01.prefab
+  artifactKey: Guid(a19f2e49529f1ef4d903f3b663ce7893) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_01.prefab using Guid(a19f2e49529f1ef4d903f3b663ce7893) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7895d17bd54f3cce66036077c324cd16') in 0.015116 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 1.011765 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_03.prefab
+  artifactKey: Guid(43bbe6106d9602b418076e5e6955f800) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_03.prefab using Guid(43bbe6106d9602b418076e5e6955f800) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b16e0468e9ef2d30351c59dc21e335d') in 0.015272 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.127795 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_04.prefab
+  artifactKey: Guid(bad3ddcb570876641a79193c07d20684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_04.prefab using Guid(bad3ddcb570876641a79193c07d20684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0a4abd7392268ac2d490f66acb95714') in 0.012937 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.126669 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_01.prefab
+  artifactKey: Guid(1ea71f643417d124d91e53eae7c666a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_01.prefab using Guid(1ea71f643417d124d91e53eae7c666a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4260981290a5d564aeb3cdfeefe0cb6a') in 0.048637 seconds 
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.122335 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_02.prefab
+  artifactKey: Guid(1000cad1907db004b8d52ddf62c1ae94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_02.prefab using Guid(1000cad1907db004b8d52ddf62c1ae94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e1192e4dbf6362749f7b947f00a372a') in 0.017282 seconds 
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.143718 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_03.prefab
+  artifactKey: Guid(47ac04e5b24338c44ba15b946641236c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_03.prefab using Guid(47ac04e5b24338c44ba15b946641236c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c364f1d2626053741f4177217e5d38c') in 0.016398 seconds 
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.274320 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_04.prefab
+  artifactKey: Guid(bce0c9523691df448b83c8c972060b2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_04.prefab using Guid(bce0c9523691df448b83c8c972060b2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eea532e255357eff4da0b8f3061270db') in 0.015121 seconds 
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.174374 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_Dead_01.prefab
+  artifactKey: Guid(c6437f01ea9e6154f8bee15a6eec78d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_Dead_01.prefab using Guid(c6437f01ea9e6154f8bee15a6eec78d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a7040d4ad9c67d1d6e6a16d7493884a') in 0.034136 seconds 
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.159200 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_Small_01.prefab
+  artifactKey: Guid(e64e0b484ac273644af92dc0e00601a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Birch_Small_01.prefab using Guid(e64e0b484ac273644af92dc0e00601a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42a9e88a1c89ca81b6fbfcb307c5b84d') in 0.015502 seconds 
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.174112 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Branch_01.prefab
+  artifactKey: Guid(d490d5805a8f22c449470acc5c2bbf6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Branch_01.prefab using Guid(d490d5805a8f22c449470acc5c2bbf6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '432fc3cc0e9abcc731c7ab7768831e46') in 0.038342 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.169614 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Dead_01.prefab
+  artifactKey: Guid(33247b6aefb946246bc9f0c7346b4364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Dead_01.prefab using Guid(33247b6aefb946246bc9f0c7346b4364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61d23a16abab78e432a48e12e570728e') in 0.015192 seconds 
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.224278 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Dead_02.prefab
+  artifactKey: Guid(f597615a8abb43c40be4c01539ceb80b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Dead_02.prefab using Guid(f597615a8abb43c40be4c01539ceb80b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22583bda4f0609195dc8a78338d5fa10') in 0.013960 seconds 
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.200919 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Dead_03.prefab
+  artifactKey: Guid(7b324b148b509104cb0f42a02b6b4b78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Dead_03.prefab using Guid(7b324b148b509104cb0f42a02b6b4b78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08fc64994404cff8e6d89788fc817083') in 0.013560 seconds 
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.195173 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Generic_01.prefab
+  artifactKey: Guid(e377b882a13405d4b9d5c3e8e747595e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Generic_01.prefab using Guid(e377b882a13405d4b9d5c3e8e747595e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61b5dbc2e4cf4c5e0ab49ccffe44d5e0') in 0.015634 seconds 
+Number of asset objects unloaded after import = 28
+========================================================================
+Received Import Request.
+  Time since last request: 0.205044 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Generic_Dead_01.prefab
+  artifactKey: Guid(7df36f4afc1dd884e81156cd2cb6545d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Generic_Dead_01.prefab using Guid(7df36f4afc1dd884e81156cd2cb6545d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96f355201e224669828e55c5bff343c4') in 0.013595 seconds 
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.228374 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Generic_Giant_01.prefab
+  artifactKey: Guid(5301afbcc2367b5469f618258a227b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Generic_Giant_01.prefab using Guid(5301afbcc2367b5469f618258a227b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0ea18e034754f1d071b2eb4f43b7bc8') in 0.010998 seconds 
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.206096 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Large_01.prefab
+  artifactKey: Guid(345d6370cf80aca4e971c8de6b0e69db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Large_01.prefab using Guid(345d6370cf80aca4e971c8de6b0e69db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a30da3e2ba543386072be70109a357f') in 0.015465 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.217357 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Log_01.prefab
+  artifactKey: Guid(e4d35fc487ff62e45b34ae45f80c88fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Log_01.prefab using Guid(e4d35fc487ff62e45b34ae45f80c88fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e07a52a3d4c7dcf08e676819951b6212') in 0.014690 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.201863 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Log_02.prefab
+  artifactKey: Guid(9020d2933ec6c0544965ea4b12952c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Log_02.prefab using Guid(9020d2933ec6c0544965ea4b12952c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79490f2230a712f65b2defb8ffae2fb0') in 0.014895 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.274350 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_01.prefab
+  artifactKey: Guid(fc9f550802bde56499ac8b64cac565f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_01.prefab using Guid(fc9f550802bde56499ac8b64cac565f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c05e8754cd340089951af38b634ee7b3') in 0.011201 seconds 
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.260855 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_02.prefab
+  artifactKey: Guid(0734397d1a4fd924f98424ecb4ca43b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_02.prefab using Guid(0734397d1a4fd924f98424ecb4ca43b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b94db122940b86f61a0c5440380a90a') in 0.014193 seconds 
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.274891 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Base_01.prefab
+  artifactKey: Guid(16de6d3c3c2ed354b93df7ed190e4053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Base_01.prefab using Guid(16de6d3c3c2ed354b93df7ed190e4053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72b039e3116f68953c5c79b825058e70') in 0.015783 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.247180 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Dead_01.prefab
+  artifactKey: Guid(11d0d688b29309541acbbbf9497b8b78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Dead_01.prefab using Guid(11d0d688b29309541acbbbf9497b8b78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '744680d3cc37c53ded0b613a497fdcde') in 0.015250 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.278432 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Large_01.prefab
+  artifactKey: Guid(058b5ab120afe6048b4289730cb3e5c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Large_01.prefab using Guid(058b5ab120afe6048b4289730cb3e5c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf98109b6e340817df823bca79b17755') in 0.013771 seconds 
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.259170 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Large_02.prefab
+  artifactKey: Guid(566814b1eb74baa449f9fef747a83fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Large_02.prefab using Guid(566814b1eb74baa449f9fef747a83fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9afad4ba2b5d55e0fe1ef480d6913faa') in 0.013775 seconds 
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.269962 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Small_01.prefab
+  artifactKey: Guid(fa1fbed80c6345a4da5ccfbda3b22ac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Small_01.prefab using Guid(fa1fbed80c6345a4da5ccfbda3b22ac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2b32a5b6aadf798bffe84ed6267c7e0') in 0.013551 seconds 
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.244047 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Small_02.prefab
+  artifactKey: Guid(2df6c259e4a67614fac8c85e23ecb3d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Pine_Small_02.prefab using Guid(2df6c259e4a67614fac8c85e23ecb3d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b5123f7c96a46900e96613366cfc2de') in 0.015231 seconds 
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.225815 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_01.prefab
+  artifactKey: Guid(5d7318dc4214e88458f42323d9cc4706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_01.prefab using Guid(5d7318dc4214e88458f42323d9cc4706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '387e4f52d926fb5ed2cb09b7371d434e') in 0.011025 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.274255 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_02.prefab
+  artifactKey: Guid(581bafddb39268e429cb24408e026c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_02.prefab using Guid(581bafddb39268e429cb24408e026c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc74c2dc099f7b21e27fe6975ad40b25') in 0.010136 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.235914 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_03.prefab
+  artifactKey: Guid(d18846c2d467b2c47b310be6e80b0434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_03.prefab using Guid(d18846c2d467b2c47b310be6e80b0434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e56722ab954253c14f2512389b220fc') in 0.014782 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.256277 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_Sparse_01.prefab
+  artifactKey: Guid(6475aabacc1a9cb41aaca282d6ea7fc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_Sparse_01.prefab using Guid(6475aabacc1a9cb41aaca282d6ea7fc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd201e834ae7a2ae1afb8549a4b36412c') in 0.015365 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.208284 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_Sparse_02.prefab
+  artifactKey: Guid(28906d92a6b505e46a49aa2312f0ba58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_Sparse_02.prefab using Guid(28906d92a6b505e46a49aa2312f0ba58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fecc90f504c6fc0c3a4a76a29038975') in 0.014321 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.264074 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_Sparse_03.prefab
+  artifactKey: Guid(054b67e619cbc1046bed54b07283d49d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_PolyPine_Sparse_03.prefab using Guid(054b67e619cbc1046bed54b07283d49d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62c6ec0c7f624cf4be64b5ee4c8f2020') in 0.013510 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.239501 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_01.prefab
+  artifactKey: Guid(dafad5d52cd284f4b8229a896f9a966f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_01.prefab using Guid(dafad5d52cd284f4b8229a896f9a966f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ba1aaaa5d401ff73e86df52765f3ed5') in 0.010706 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.255487 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_02.prefab
+  artifactKey: Guid(cee0719eaa611da43905af2904d1904c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_02.prefab using Guid(cee0719eaa611da43905af2904d1904c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb3c53135d2b6f52792cad7d3b24d525') in 0.015090 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.280959 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_03.prefab
+  artifactKey: Guid(e94c8232017a8bd4ba1c0f5115f3481d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_03.prefab using Guid(e94c8232017a8bd4ba1c0f5115f3481d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b8c30e6912cfcf301ac72ae105fed7d') in 0.010367 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.256094 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_04.prefab
+  artifactKey: Guid(1c16030f889f46e42b6c73b6d0f6113e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_04.prefab using Guid(1c16030f889f46e42b6c73b6d0f6113e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f523f1dca186f9a322975b56aa2edd12') in 0.015399 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.268001 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_05.prefab
+  artifactKey: Guid(732e4c9ea17173840885f16c6497c479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Round_05.prefab using Guid(732e4c9ea17173840885f16c6497c479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11ad67c16fe3babe0b4582284f7b3a7d') in 0.014244 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.261893 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Stump_01.prefab
+  artifactKey: Guid(c104bd949dbb87644ab3fe86ab934293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Stump_01.prefab using Guid(c104bd949dbb87644ab3fe86ab934293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33dd25984eee27ef37ba843d3c5c3218') in 0.016528 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.261265 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Stump_02.prefab
+  artifactKey: Guid(d8ab54d35fe81704b8af3b42616763a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Stump_02.prefab using Guid(d8ab54d35fe81704b8af3b42616763a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8233352cbc89d001cb7c71c3590cdb2b') in 0.015805 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.299098 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Stump_03.prefab
+  artifactKey: Guid(fa52ff58096048c4db727a636561983f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Stump_03.prefab using Guid(fa52ff58096048c4db727a636561983f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9df7baf29be09ffd4776b02b1ec6b761') in 0.015863 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.318163 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Stump_04.prefab
+  artifactKey: Guid(679138ede056eb542b9629948780ee84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Stump_04.prefab using Guid(679138ede056eb542b9629948780ee84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '081ef2d7378ccd54f944fdf2feb01b99') in 0.015927 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.314858 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_01.prefab
+  artifactKey: Guid(d6660cac033867643a649f4255fa8e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_01.prefab using Guid(d6660cac033867643a649f4255fa8e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97d3ab043769a0fc778b9df623ebf996') in 0.010358 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.321773 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_02.prefab
+  artifactKey: Guid(dbbffa6287a94b24c80e0839e6696216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_02.prefab using Guid(dbbffa6287a94b24c80e0839e6696216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac7c322d8840983bf72fb5d01e6a3868') in 0.015098 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.293415 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_03.prefab
+  artifactKey: Guid(e8efa5f3f39eede46b964d93acc7a7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_03.prefab using Guid(e8efa5f3f39eede46b964d93acc7a7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2efeec2b6ce71ed8ca8098b0f1ffaf1b') in 0.015605 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.299905 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_04.prefab
+  artifactKey: Guid(697aefc0d0375494ea083877ca3d94d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_04.prefab using Guid(697aefc0d0375494ea083877ca3d94d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '322180541bbbc44fabe5f3d4263b04ac') in 0.014360 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.270659 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Branch_01.prefab
+  artifactKey: Guid(9bc7d92e5ed8a9e46add7f7fd0045c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Branch_01.prefab using Guid(9bc7d92e5ed8a9e46add7f7fd0045c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54f44eefab583cdc8a0a23fa24f6455e') in 0.013527 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.250729 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Branch_02.prefab
+  artifactKey: Guid(60f05752946316d429c9d510b1ad6c02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Branch_02.prefab using Guid(60f05752946316d429c9d510b1ad6c02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0826eded514cd16ba7e99d502a1a475') in 0.015961 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.309055 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Root_01.prefab
+  artifactKey: Guid(6cc10fda75a465b4c88a8c85b969dff6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Root_01.prefab using Guid(6cc10fda75a465b4c88a8c85b969dff6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ef0bd4dffe1f94a70d3cc9afca42bb4') in 0.026971 seconds 
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.269735 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Root_02.prefab
+  artifactKey: Guid(bb290a0b717f64745a51c2cb09e3f113) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Root_02.prefab using Guid(bb290a0b717f64745a51c2cb09e3f113) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c582da0637d0f36a993da4af698bcd51') in 0.009894 seconds 
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.263835 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Stump_01.prefab
+  artifactKey: Guid(608213fc5c7ac4d4f98850704ec8906c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Stump_01.prefab using Guid(608213fc5c7ac4d4f98850704ec8906c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e2ec0a5f8dbd786f686051c0afc0f26') in 0.015307 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.227418 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Stump_02.prefab
+  artifactKey: Guid(eb570ee4ce047744fbfdd57ab0c57b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Swamp_Stump_02.prefab using Guid(eb570ee4ce047744fbfdd57ab0c57b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17553a15f61bc62d02cfa35685e39a20') in 0.015448 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.273237 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_TallRound_01.prefab
+  artifactKey: Guid(cea6706829d07db49b39851ba221405b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_TallRound_01.prefab using Guid(cea6706829d07db49b39851ba221405b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33b6fa46e2b6073099c9ae3bb1d6ac5e') in 0.013750 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.318670 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_01.prefab
+  artifactKey: Guid(720c6591b996f3b45b844519425924b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_01.prefab using Guid(720c6591b996f3b45b844519425924b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8794da9a7e40d1eb1c439e4d448b9be') in 0.014189 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.290290 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_02.prefab
+  artifactKey: Guid(df92770844ac44c4ab92f00167bffc4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_02.prefab using Guid(df92770844ac44c4ab92f00167bffc4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c083bfb0392a15f10548136f5480a642') in 0.017088 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.309843 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_03.prefab
+  artifactKey: Guid(865ad0d1d27074344863836fab307b64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_03.prefab using Guid(865ad0d1d27074344863836fab307b64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f187d818cce169e6de6f1dddb2ecf0da') in 0.012927 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.256817 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_04.prefab
+  artifactKey: Guid(2c1b8ba858adad2478af52d208187ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_04.prefab using Guid(2c1b8ba858adad2478af52d208187ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ee56d634bb0732e27de74b09c75f4a9') in 0.020462 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.271911 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_05.prefab
+  artifactKey: Guid(71cb9eb6f87b5124a97725b13c1e6daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Twig_05.prefab using Guid(71cb9eb6f87b5124a97725b13c1e6daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c57f7c9e7f1e713db634ad7ac7362a18') in 0.017758 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.217912 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Vines_01.prefab
+  artifactKey: Guid(f3da837e16e9f174c815da408e07d7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Vines_01.prefab using Guid(f3da837e16e9f174c815da408e07d7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50c96a28568bdf9345767f51d60b2c7d') in 0.014249 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.225929 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Vines_02.prefab
+  artifactKey: Guid(659d26211f6da2749b99f4c64cce95c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Vines_02.prefab using Guid(659d26211f6da2749b99f4c64cce95c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72c378feb801b19f7dd0940bfec1bb94') in 0.014354 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.226742 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Vines_03.prefab
+  artifactKey: Guid(5310541057902c04bb23a275c2c68792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Vines_03.prefab using Guid(5310541057902c04bb23a275c2c68792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '140929e32d0a2ee27e70becb30bc8275') in 0.015258 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.242197 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Vines_04.prefab
+  artifactKey: Guid(0390ab7cf3e190146bd7ef8f0cb7a482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Vines_04.prefab using Guid(0390ab7cf3e190146bd7ef8f0cb7a482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac09bcda5054d1933e1bd83572889fb7') in 0.010095 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.206799 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Willow_Large_01.prefab
+  artifactKey: Guid(898874364bf16b6478fe589c550d3e59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Willow_Large_01.prefab using Guid(898874364bf16b6478fe589c550d3e59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f2be6f1381a58eaca32446469598b2c') in 0.019338 seconds 
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 0.209426 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Willow_Medium_01.prefab
+  artifactKey: Guid(d9e944108d6a10d4dab3ec7137c8b739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Willow_Medium_01.prefab using Guid(d9e944108d6a10d4dab3ec7137c8b739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22e3a962bebf11a248cd38a549666445') in 0.015338 seconds 
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 0.198337 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Willow_Small_01.prefab
+  artifactKey: Guid(4d88971c9d891dc45a8dbd49a3ba6913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Trees/SM_Tree_Willow_Small_01.prefab using Guid(4d88971c9d891dc45a8dbd49a3ba6913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0a85457593a1083bde7a017a9b9f971') in 0.014595 seconds 
+Number of asset objects unloaded after import = 29
+========================================================================
+Received Import Request.
+  Time since last request: 11.642038 seconds.
+  path: Assets/Synty/PolygonNature/Models/SM_Rock_CaveEntrance_01.fbx
+  artifactKey: Guid(ea9e10fe64485874db99c58690c6955c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Models/SM_Rock_CaveEntrance_01.fbx using Guid(ea9e10fe64485874db99c58690c6955c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e81e2cd1adb88825be35cafa8728a00') in 0.143261 seconds 
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 1.122715 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Rocks/SM_Rock_CaveEntrance_01.prefab
+  artifactKey: Guid(b02415e50456dea469f21d4618a16267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Rocks/SM_Rock_CaveEntrance_01.prefab using Guid(b02415e50456dea469f21d4618a16267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ef2b7ce9e0511857bd303015cec8249') in 0.022003 seconds 
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 2.990326 seconds.
+  path: Assets/Synty/PolygonNature/Prefabs/Rocks/SM_Rock_CaveEntrance_02.prefab
+  artifactKey: Guid(c4c6332c6f8e62348870c38bf0f4a575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonNature/Prefabs/Rocks/SM_Rock_CaveEntrance_02.prefab using Guid(c4c6332c6f8e62348870c38bf0f4a575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fea7db24288f6ff0fccab6e1509b1d99') in 0.008076 seconds 
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 286.580904 seconds.
+  path: Assets/Synty/PolygonCity/Prefabs/Environments/SM_Env_GrassPath_Corner_01.prefab
+  artifactKey: Guid(bebb4c413c96c0b4481e8208ea89828d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonCity/Prefabs/Environments/SM_Env_GrassPath_Corner_01.prefab using Guid(bebb4c413c96c0b4481e8208ea89828d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79a635cb0c0e5f2f9b8c726b845bef0a') in 0.018402 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 2.099411 seconds.
+  path: Assets/Synty/PolygonCity/Models/SM_Env_GrassPath_Junction_01.fbx
+  artifactKey: Guid(e76b994765a9bd24da1b215505b251a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonCity/Models/SM_Env_GrassPath_Junction_01.fbx using Guid(e76b994765a9bd24da1b215505b251a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '833501be6ef8f91d803531fca8423442') in 0.015662 seconds 
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 1.493093 seconds.
+  path: Assets/Synty/PolygonCity/Prefabs/Environments/SM_Env_GrassPath_Junction_01.prefab
+  artifactKey: Guid(b6b1bafe204782c43804e201982d350e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonCity/Prefabs/Environments/SM_Env_GrassPath_Junction_01.prefab using Guid(b6b1bafe204782c43804e201982d350e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f43ab355fa11649881545f242c992ee') in 0.013448 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 1.639075 seconds.
+  path: Assets/Synty/PolygonCity/Models/SM_Env_GrassPath_Straight_01.fbx
+  artifactKey: Guid(7b7b77ab314d27a4b88812f19caa23cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonCity/Models/SM_Env_GrassPath_Straight_01.fbx using Guid(7b7b77ab314d27a4b88812f19caa23cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90be00f3b218c63da64fbe292f64f81a') in 0.015212 seconds 
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 5.780663 seconds.
+  path: Assets/Synty/PolygonCity/Prefabs/Environments/SM_Env_GrassPath_T_01.prefab
+  artifactKey: Guid(4cc8f1948a42ebe40ac5459f911aaf3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonCity/Prefabs/Environments/SM_Env_GrassPath_T_01.prefab using Guid(4cc8f1948a42ebe40ac5459f911aaf3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd188874b686b79b9345e3b2798b5b9c0') in 0.019386 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.766558 seconds.
+  path: Assets/Synty/PolygonCity/Prefabs/Environments/SM_Env_GrassPath_Straight_01.prefab
+  artifactKey: Guid(0c0aeb13e5f9e324ebd2bef52c75b6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Synty/PolygonCity/Prefabs/Environments/SM_Env_GrassPath_Straight_01.prefab using Guid(0c0aeb13e5f9e324ebd2bef52c75b6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd553e83e93b6446d1529c44770791b1b') in 0.014493 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 276.185268 seconds.
+  path: Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStars_01.png
+  artifactKey: Guid(7f632bd26926ea74bb1c9ff42152fd98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStars_01.png using Guid(7f632bd26926ea74bb1c9ff42152fd98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6960eb42d2198e6e4fc1cea88243d7c9') in 0.535896 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStars_05.png
+  artifactKey: Guid(aa9155883eaa30842b400ad81b626295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStars_05.png using Guid(aa9155883eaa30842b400ad81b626295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64bb93a09f2cccaefe88585e5d0909fa') in 0.007308 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStars_04.png
+  artifactKey: Guid(294a932dd802640478618873f891904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStars_04.png using Guid(294a932dd802640478618873f891904b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bf9d57ce096c77d8fb7e8bfb6494658') in 0.007092 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 7.900844 seconds.
+  path: Assets/Scenes/BossLevel.unity
+  artifactKey: Guid(c84d4fbc42bbc084cac67033f4ebef5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/BossLevel.unity using Guid(c84d4fbc42bbc084cac67033f4ebef5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54fcf3a1d01bb9b6204ee08af59f7979') in 0.000949 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.757797 seconds.
+  path: Assets/Scenes/DemoScene_01.unity
+  artifactKey: Guid(0f7e658d52efc492d8d0d2b869103bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/DemoScene_01.unity using Guid(0f7e658d52efc492d8d0d2b869103bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'daaa6bcae9693e84e5f70c80f97b1742') in 0.001070 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.903287 seconds.
+  path: Assets/Scenes/New Scene.unity
+  artifactKey: Guid(cc7e62fbe858b4a168c7a0c3aa38ba7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/New Scene.unity using Guid(cc7e62fbe858b4a168c7a0c3aa38ba7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a251aa24ce3008eb8fbc0c3bbb24ba4') in 0.001584 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.045873 seconds.
+  path: Assets/Scenes/DemoScene_01Settings.lighting
+  artifactKey: Guid(7a45b9bb5a803462d87e6c84930c712c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/DemoScene_01Settings.lighting using Guid(7a45b9bb5a803462d87e6c84930c712c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) LightingSettings: switching bake backend from 2 to 0.
+ -> (artifact id: '05dc734b75c5b8a470cad9f1b84a2268') in 0.032647 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 94.161463 seconds.
+  path: Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_01.png
+  artifactKey: Guid(1490ed28bb923304e99663574b16967e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_01.png using Guid(1490ed28bb923304e99663574b16967e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df00432e7cdab1d0eb6ae6c0d138f62d') in 0.006955 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_06.png
+  artifactKey: Guid(6f920c146d1d8614a8b7818df24a394e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_06.png using Guid(6f920c146d1d8614a8b7818df24a394e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ce23f668353355bf30555ea461f8f3d') in 0.009187 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_05.png
+  artifactKey: Guid(44f44d1ee4f64d24c9014c46c7a2938e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_05.png using Guid(44f44d1ee4f64d24c9014c46c7a2938e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f4ca47cfb4ea0de871763085cb83b2e') in 0.006575 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_04.png
+  artifactKey: Guid(42dcad20357fe464c936b9995f606791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_04.png using Guid(42dcad20357fe464c936b9995f606791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a51cab5a3b0b597e3e6b173520192b22') in 0.006358 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_03.png
+  artifactKey: Guid(7eaddd955b03f6d49b5c9a78948d5960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Plugins/FattySkybox_TriSpace/Textures/SkyBox/FattySky50_AllStarsCloud_03.png using Guid(7eaddd955b03f6d49b5c9a78948d5960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '638a8d611e9399bfd998276ecbfabeff') in 0.006919 seconds 
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
