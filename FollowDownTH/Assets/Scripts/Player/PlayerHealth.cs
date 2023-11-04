@@ -7,6 +7,7 @@ public class PlayerHealth : Health
     private Animator animator;
     private PlayerLocomotionManager playerLocomotionManager;
     [SerializeField] private Color parryColor;
+    [SerializeField] private GameObject gameOverUI;
 
     protected override void Awake()
     {
@@ -30,6 +31,7 @@ public class PlayerHealth : Health
 
     public void DamagedHandler(int attackType, float dmg)
     {
+        if(isDead) return;
         // attackType 1 : horizontal
         // attackType 2 : vertial
         switch (playerLocomotionManager.curPerformingAction)
@@ -86,6 +88,7 @@ public class PlayerHealth : Health
             {
                 PlayActionAnimation("OH_Death", true);
             }
+            gameOverUI.SetActive(true);
         }
         else
         {

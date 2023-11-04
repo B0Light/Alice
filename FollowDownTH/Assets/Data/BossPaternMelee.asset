@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1afc9a7bb301a34e9803d9fd3fad771, type: 3}
   m_Name: BossPaternMelee
   m_EditorClassIdentifier: 
-  attackType: MeleeAttack
+  attackName: MeleeAttack
   range: 2
   damage: 15
+  attackType: 0

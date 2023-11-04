@@ -8,18 +8,21 @@ using UnityEngine.AI;
 public class EnemyPath : MonoBehaviour
 {
     public NavMeshAgent navMesh = null;
-    AntManager antManager;
+    EnemyManager antManager;
     EnemyAtk enemyAtk;
     
-    public float stopDistance = 5.0f;
+    public float stopDistance = 3.0f;
 
     private int currNode = 0;
     [SerializeField, Range(1f,10f)] private float fov;
     [SerializeField] private LayerMask targetLayer;
 
+    [Header("Soldier")] 
+    [SerializeField] private Animator animator;
+
     private void Awake()
     {
-        antManager = GetComponent<AntManager>();
+        antManager = GetComponent<EnemyManager>();
         enemyAtk = GetComponent<EnemyAtk>();
         navMesh = GetComponent<NavMeshAgent>();
     }
@@ -49,10 +52,16 @@ public class EnemyPath : MonoBehaviour
         if (navMesh.velocity == Vector3.zero)
         {
             MoveToNextNode();
+            if(animator)
+                animator.SetBool("isWalk",false);
         }
         else
         {
             Sight();
+            if (animator)
+            {
+                animator.SetBool("isWalk",true);
+            }
         }
     }
 
@@ -105,6 +114,7 @@ public class EnemyPath : MonoBehaviour
         if (cols.Length > 0) // Atk Ready
         {
             enemyAtk.Attack_Base();
+            navMesh.ResetPath();
         }
     }
 }

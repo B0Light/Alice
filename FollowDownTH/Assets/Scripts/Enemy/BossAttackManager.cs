@@ -14,9 +14,8 @@ public class BossAttackManager : MonoBehaviour
     private GameObject _player;
     [SerializeField] private Animator animator;
     [SerializeField] private bool isPerformingAction;
-
-    [SerializeField] private Rigidbody _rigidbody;
-
+    [SerializeField] private EnemyHealth enemyHealth;
+    
     private NavMeshAgent _navMeshAgent;
 
     [Header("EnemyWeapon")] 
@@ -25,8 +24,10 @@ public class BossAttackManager : MonoBehaviour
     [SerializeField] private GameObject weaponStaff;
 
     [Header("BossPattern")]
-    private BossPattern currPattern;
-    [SerializeField] private BossPattern patternMelee;
+    public EnemyAttackPattern currPattern;
+
+    [SerializeField] private EnemyAttackPattern patternRange;
+    [SerializeField] private List<EnemyAttackPattern> patternMelee;
 
     [Header("RangeAttack")]
     private float fireCooldown = 0.1f;
@@ -41,15 +42,24 @@ public class BossAttackManager : MonoBehaviour
         _bossManager = GetComponent<BossManager>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
-        StartCoroutine(Think());
+        //StartCoroutine(Think());
     }
 
     private void Update()
     {
         isPerformingAction = animator.GetBool("isPerformingAction");
+        if (isPerformingAction == false)
+        {
+            enemyWeaponCollider.SetActive(false);
+        }
+
+        if (enemyHealth.isDead)
+        {
+            StopAllCoroutines();
+        }
     }
 
-    IEnumerator Think()
+    public IEnumerator Think()
     {
         if (_player == null)
         {
@@ -59,8 +69,8 @@ public class BossAttackManager : MonoBehaviour
         {
             float distance = Vector3.Distance(this.transform.position, _player.transform.position);
             StartCoroutine(RotateTowardsTarget(this.transform, _player.transform, 0.3f));
-            currPattern = patternMelee;
-            if (distance < patternMelee.range)
+            currPattern = patternMelee[Random.Range(0,patternMelee.Count)];
+            if (distance < currPattern.range)
             {
                 Attack();
             }
@@ -87,9 +97,18 @@ public class BossAttackManager : MonoBehaviour
     {
         if (isPerformingAction) return;
         _navMeshAgent.ResetPath();
+        enemyWeaponCollider.GetComponent<EnemyWeapon>().damage = currPattern.damage;
         enemyWeaponCollider.SetActive(true);
         transform.LookAt(_player.transform);
-        PlayActionAnimation(currPattern.attackType, true);
+        PlayActionAnimation(currPattern.attackName, true);
+    }
+
+    private void Parried()
+    {
+        if (isPerformingAction)
+        {
+            
+        }
     }
 
     private void EnterSecondPhase()
@@ -109,6 +128,7 @@ public class BossAttackManager : MonoBehaviour
     {
         if(isPerformingAction) return;
         PlayActionAnimation("RangeAttack",true);
+        currPattern = patternRange;
         StartCoroutine(RangeAttackCombo());
     }
     IEnumerator RangeAttackCombo()
@@ -118,6 +138,8 @@ public class BossAttackManager : MonoBehaviour
         {
             GameObject projectile = Instantiate(prefabCast, firePoint.position, firePoint.rotation);
             projectile.GetComponent<HatProjectile>().UpdateTarget(_player.transform, (Vector3)uiOffset);
+            projectile.GetComponentInChildren<EnemyWeapon>().damage = currPattern.damage;
+            projectile.GetComponentInChildren<EnemyWeapon>().attackType = currPattern.attackType;
             Effect = prefabCast.GetComponent<ParticleSystem>();
             Effect.Play();
             //camShake?
@@ -153,16 +175,5 @@ public class BossAttackManager : MonoBehaviour
         animator.SetBool("isPerformingAction", isPerformingAction);
         animator.CrossFade(animation, 0.2f);
     }
-
-    private void OnAnimatorMove()
-    {
-        if (isPerformingAction)
-        {
-            _rigidbody.drag = 0;
-            Vector3 deltaPosition = animator.deltaPosition;
-            deltaPosition.y = 0;
-            Vector3 velocity = deltaPosition / Time.deltaTime;
-            _rigidbody.velocity = velocity;
-        }
-    }
+    
 }

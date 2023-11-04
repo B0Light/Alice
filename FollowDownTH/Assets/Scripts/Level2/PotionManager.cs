@@ -20,5 +20,6 @@ public class PotionManager : MonoBehaviour
         PlayerStamina playerStamina = player.GetComponent<PlayerStamina>();
         playerStamina.DrinkPotion();
         player.transform.localScale = Vector3.one;
+        player.GetComponent<PlayerLocomotionManager>().canRecovering = true;
     }
 }

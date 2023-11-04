@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerAttackManager : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    
+    [SerializeField] private Transform atkPos;
     
     [SerializeField] private Transform weaponSlot;
     [SerializeField] private PlayerLocomotionManager playerLocomotionManager;
@@ -15,8 +16,9 @@ public class PlayerAttackManager : MonoBehaviour
     
     public  bool isEquipWeapon = false;
 
-    private bool isSetTotalDamage = false;
+    private int isSetTotalDamage = 0;
     
+    [SerializeField] private List<GameObject> impactVfx;
     public void PickUpWeapon(Item weapon)
     {
         isEquipWeapon = true;
@@ -44,16 +46,20 @@ public class PlayerAttackManager : MonoBehaviour
     {
         if (isEquipWeapon)
         {
-            if (playerLocomotionManager.isAttack && !isSetTotalDamage)
+            if (playerLocomotionManager.isAttack)
             {
-                SetWeaponDamage();
+                if ((isSetTotalDamage == 0) || (playerLocomotionManager.isCombo && isSetTotalDamage == 1))
+                {
+                    SetWeaponDamage();
+                }
             }
+            
 
             if (playerLocomotionManager.isAttack == false)
             {
                 weaponValue.totalAttackPower = 0;
                 weaponValue.attackType = 0;
-                isSetTotalDamage = false;
+                isSetTotalDamage = 0;
             }
         }
         
@@ -61,26 +67,73 @@ public class PlayerAttackManager : MonoBehaviour
 
     private void SetWeaponDamage()
     {
-        isSetTotalDamage = true;
         switch (playerLocomotionManager.curPerformingAction)
         {
             case EnumList.States.HorizontalAttack:
                 weaponValue.totalAttackPower = weaponValue.horizontalCoefficient * weaponValue.value;
                 weaponValue.attackType = 1;
+                if (isSetTotalDamage == 0)
+                {
+                    StartCoroutine(VFX(0, 3f, 0.3f));
+                    isSetTotalDamage = 1;
+                }
+                else
+                {
+                    StartCoroutine(VFX(3, 3f, 0.5f));
+                    isSetTotalDamage = 2;
+                }
+                    
                 break;
             case EnumList.States.VerticalAttack:
                 weaponValue.totalAttackPower = weaponValue.verticalCoefficient * weaponValue.value;
                 weaponValue.attackType = 2;
+                if (isSetTotalDamage == 0)
+                {
+                    StartCoroutine(VFX(1, 3f, 0.5f));
+                    isSetTotalDamage = 1;
+                }
+                else
+                {
+                    StartCoroutine(VFX(4, 3f, 0.5f));
+                    isSetTotalDamage = 2;
+                }
+                    
                 break;
             case EnumList.States.ChargeAttack:
                 weaponValue.totalAttackPower = weaponValue.stingCoefficient * weaponValue.value;
                 weaponValue.attackType = 3;
+                if (isSetTotalDamage == 0)
+                {
+                    StartCoroutine(VFX(2,3f, .8f));
+                    isSetTotalDamage = 1;
+                }
+                else
+                {
+                    StartCoroutine(VFX(5, 3f, 1.5f));
+                    isSetTotalDamage = 2;
+                }
+                    
                 break;
             // not used
             case EnumList.States.Idle:
                 weaponValue.totalAttackPower = weaponValue.value;
                 weaponValue.attackType = 0;
                 break;
+        }
+    }
+    
+    
+    
+    IEnumerator VFX(int type, float impactVfxLifetime, float delay)
+    {
+        if (impactVfx[type])
+        {
+            yield return new WaitForSeconds(delay);
+            GameObject impactVfxInstance = Instantiate(impactVfx[type], atkPos);
+            if (impactVfxLifetime > 0)
+            {
+                Destroy(impactVfxInstance, impactVfxLifetime);
+            }
         }
     }
 }

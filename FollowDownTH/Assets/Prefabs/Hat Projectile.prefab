@@ -14766,6 +14766,8 @@ GameObject:
   - component: {fileID: 7982075749973471406}
   - component: {fileID: 7971524934252736628}
   - component: {fileID: 7963434398039084000}
+  - component: {fileID: 7154648200220650433}
+  - component: {fileID: 7372055707918293031}
   m_Layer: 0
   m_Name: Weapon_Hat
   m_TagString: Untagged
@@ -14838,3 +14840,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7154648200220650433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986247433638414974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d748987844b4c1faca90f6007fb81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerhealth: {fileID: 0}
+  bossAttackManager: {fileID: 0}
+--- !u!65 &7372055707918293031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986247433638414974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0.0000067725778, y: 0.32754475, z: -0.0002629459}

@@ -15,6 +15,11 @@ public class Health : MonoBehaviour
     [SerializeField] private List<float> CoefValue = new List<float>(){1.0f,1.0f,1.0f,1.0f};
     public bool isDead = false;
     public bool isDmg = false;
+    
+    
+    [Header("Damage FX")]
+    public GameObject bloodSplatterFX;
+    
     protected virtual void Awake()
     {
         itemMesh = GetComponentInChildren<MeshRenderer>();
@@ -82,4 +87,5 @@ public class Health : MonoBehaviour
     {
         health.MaxValue += value;
     }
+   
 }

@@ -35,6 +35,7 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] bool isWalking;
 
     public bool isAttack;
+    public bool isCombo;
 
     public bool isTwoHandingWeapon;
 
@@ -50,9 +51,8 @@ public class PlayerLocomotionManager : MonoBehaviour
     Vector3 moveDirection;
     Vector3 planeNormal;
 
-    [Header("ScenePhase2")]
-    public bool isSleep;
-    public bool isPlayerActive;
+    [Header("Cinematic")]
+    public bool isPlayerActive = true;
 
     //CAMERA VARIABLES
     [Header("Camera")]
@@ -72,10 +72,10 @@ public class PlayerLocomotionManager : MonoBehaviour
     public float sphereRadius = 10f;
     public LayerMask enemyLayer;
     private Transform playerTransform;
-    private Transform targetTransform;
+    [SerializeField] private Transform targetTransform;
 
     //ATTACK VARIABLES
-    [SerializeField] private string attackLastPerformed;
+    public string attackLastPerformed;
     [SerializeField] private bool horizontalAttackInput;
     [SerializeField] private bool verticalAttackInput;
     [SerializeField] private bool chargeAttackInput;
@@ -91,9 +91,11 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] private float backStaminaCost = 10;
 
     [Header("AttackCost")] 
-    [SerializeField] private float horizontalCost;
-    [SerializeField] private float verticalCost;
-    [SerializeField] private float chargeCost;
+    private float horizontalCost = 10;
+    private float verticalCost = 15;
+    private float chargeCost = 20;
+
+    public bool canRecovering = true;
 
     string oh_Light_Attack_01 = "OH_Light_Attack_01";
     string oh_Light_Attack_02 = "OH_Light_Attack_02";
@@ -131,15 +133,30 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void Update()
     {
-        HandleInputs();
-        UpdateAnimatorParameters();
-        isPerformingAction = animator.GetBool("isPerformingAction");
-        isPerformingBackStep = animator.GetBool("isPerformingBackStep");
-        if (!isPerformingAction)
+        if (isPlayerActive)
         {
-            curPerformingAction = EnumList.States.Idle;
-            animator.SetBool("isCombo", false);
-            isAttack = false;
+            HandleInputs();
+            UpdateAnimatorParameters();
+            isPerformingAction = animator.GetBool("isPerformingAction");
+            isPerformingBackStep = animator.GetBool("isPerformingBackStep");
+            if (isPerformingAction == false)
+            {
+                curPerformingAction = EnumList.States.Idle;
+                animator.SetBool("isCombo", false);
+                isAttack = false;
+                isCombo = false;
+                if(canRecovering)
+                    playerStamina.isRecoverable = true;
+            }
+            else
+            {
+                playerStamina.isRecoverable = false;
+            }
+        }
+
+        if (targetTransform == null)
+        {
+            isLockOn = false;
         }
     }
 
@@ -381,6 +398,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     animator.SetBool("isCombo", true);
+                    isCombo = true;
                     playerStamina.UseStamina(horizontalCost);
                     weaponFX.Stop();
                     weaponFX.Play();
@@ -394,6 +412,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     animator.SetBool("isCombo", true);
+                    isCombo = true;
                     playerStamina.UseStamina(horizontalCost);
                     weaponFX.Stop();
                     weaponFX.Play();
@@ -468,6 +487,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 if (Input.GetMouseButtonUp(1))
                 {
                     animator.SetBool("isCombo", true);
+                    isCombo = true;
                     playerStamina.UseStamina(verticalCost);
                     weaponFX.Stop();
                     weaponFX.Play();
@@ -479,6 +499,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 if (Input.GetMouseButtonUp(1))
                 {
                     animator.SetBool("isCombo", true);
+                    isCombo = true;
                     playerStamina.UseStamina(verticalCost);
                     weaponFX.Stop();
                     weaponFX.Play();
@@ -547,6 +568,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                     if (Input.GetKeyDown(key_ChargeAttack))
                     {
                         animator.SetBool("isCombo", true);
+                        isCombo = true;
                         playerStamina.UseStamina(chargeCost);
                         weaponChargeFX.Stop();
                         weaponChargeFX.Play();
@@ -559,6 +581,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                     if (Input.GetKeyDown(key_ChargeAttack))
                     {
                         animator.SetBool("isCombo", true);
+                        isCombo = true;
                         playerStamina.UseStamina(chargeCost);
                         weaponChargeFX.Stop();
                         weaponChargeFX.Play();
@@ -823,6 +846,8 @@ public class PlayerLocomotionManager : MonoBehaviour
     public void FollowDownTheRabbitHole()
     {
         PlayActionAnimation("FallDown", true);
+        canRecovering = false;
+        playerStamina.UseStamina(90);
         StartCoroutine(WakeUp());
     }
 
