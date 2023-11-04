@@ -10,6 +10,10 @@ public class Mana : MonoBehaviour
     [SerializeField] float maxMana = 100f;
     [SerializeField] private TextMeshProUGUI potionCount;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject recoverEffect;
+    [SerializeField] private GameObject potion;
+
     public int manaPotion = 0;
 
     protected virtual void Start()
@@ -26,7 +30,7 @@ public class Mana : MonoBehaviour
             if (manaPotion > 0)
             {
                 manaPotion--;
-                RecoverMana(100f);
+                DrinkPotion();
                 if(potionCount)
                     potionCount.text = manaPotion.ToString();
             }
@@ -45,6 +49,45 @@ public class Mana : MonoBehaviour
     public void UseMana(float value)
     {
         mana.Value -= value;
+    }
+    
+    [ContextMenu("DrinkPotion")]
+    public void DrinkPotion()
+    {
+        potion.SetActive(true);
+        RecoverMana(50f);
+        PlayActionAnimation("Drink",true);
+        StartCoroutine(RemovePotion());
+    }
+    
+    IEnumerator RemovePotion()
+    {
+        yield return new WaitForSeconds(1f);
+        potion.SetActive(false);
+    }
+    
+    
+    void HealPlayerFromEffect()
+    {
+        VFX(recoverEffect,3f);
+    }
+    
+    void VFX(GameObject vfx, float impactVfxLifetime)
+    {
+        if (vfx != null)
+        {
+            GameObject impactVfxInstance = Instantiate(vfx, transform);
+            if (impactVfxLifetime > 0)
+            {
+                Destroy(impactVfxInstance, impactVfxLifetime);
+            }
+        }
+    }
+    
+    private void PlayActionAnimation(string animation, bool isPerformingAction)
+    {
+        animator.SetBool("isPerformingAction", isPerformingAction);
+        animator.CrossFade(animation, 0.2f);
     }
 
 }

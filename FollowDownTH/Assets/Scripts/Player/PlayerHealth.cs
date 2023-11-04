@@ -14,6 +14,9 @@ public class PlayerHealth : Health
     
     [SerializeField] private GameObject impactVfx;
     [SerializeField] private Transform impactPos;
+    
+    [SerializeField] private GameObject recoverEffect;
+    [SerializeField] private GameObject potion;
 
     public int healthPotion;
 
@@ -33,12 +36,12 @@ public class PlayerHealth : Health
             DamageDebugger();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             if (healthPotion >= 1)
             {
                 healthPotion--;
-                RecoverHealth(50f);
+                DrinkPotion();
                 if(potionCount)
                     potionCount.text = healthPotion.ToString();
             }
@@ -90,7 +93,7 @@ public class PlayerHealth : Health
     {
         PlayActionAnimation("Parrying", true);
         playerLocomotionManager.curPerformingAction = EnumList.States.Parry;
-        StartCoroutine(VFX(1f));
+        VFX(impactVfx,1f);
         if(itemMesh)
             itemMesh.material.color = parryColor;
         yield return new WaitForSeconds(0.2f);
@@ -130,12 +133,32 @@ public class PlayerHealth : Health
         
     }
     
-    IEnumerator VFX(float impactVfxLifetime)
+    [ContextMenu("DrinkPotion")]
+    public void DrinkPotion()
     {
-        yield return new WaitForSeconds(0.1f);
-        if (impactVfx)
+        potion.SetActive(true);
+        RecoverHealth(50f);
+        PlayActionAnimation("Drink",true);
+        StartCoroutine(RemovePotion());
+    }
+    
+    IEnumerator RemovePotion()
+    {
+        yield return new WaitForSeconds(1f);
+        potion.SetActive(false);
+    }
+    
+    
+    void HealPlayerFromEffect()
+    {
+        VFX(recoverEffect,3f);
+    }
+    
+    void VFX(GameObject vfx, float impactVfxLifetime)
+    {
+        if (vfx != null)
         {
-            GameObject impactVfxInstance = Instantiate(impactVfx, impactPos);
+            GameObject impactVfxInstance = Instantiate(vfx, transform);
             if (impactVfxLifetime > 0)
             {
                 Destroy(impactVfxInstance, impactVfxLifetime);

@@ -886,8 +886,9 @@ public class PlayerLocomotionManager : MonoBehaviour
     public void FollowDownTheRabbitHole()
     {
         PlayActionAnimation("FallDown", true);
+        
+        playerStamina.UseStamina(90f);
         canRecovering = false;
-        playerStamina.UseStamina(90);
         StartCoroutine(WakeUp());
     }
 
