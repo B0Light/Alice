@@ -15,12 +15,13 @@ MonoBehaviour:
   id: 0
   isEquip: 0
   itemName: Branch
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1e3fb3f16a66d41deb865b83729a15ec, type: 3}
   itemObject: {fileID: 8428015307752594166, guid: 2d287c7eb3ae845949840b7112cc358f,
     type: 3}
   value: 10
   tier: 0
   type: 0
+  attackType: 0
   horizontalCoefficient: 1.1
   verticalCoefficient: 1
   stingCoefficient: 1

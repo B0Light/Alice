@@ -26,12 +26,13 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     [SerializeField] private PlayerStamina playerStamina;
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private Mana playerMana;
      
     //PLAYER VARIABLES
     [Header("Player")]
     [SerializeField] bool isLockOn;
     [SerializeField] bool isSprinting;
-    [SerializeField] bool isRunning;
+    public bool isRunning;
     [SerializeField] bool isWalking;
 
     public bool isAttack;
@@ -118,6 +119,8 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] private KeyCode key_ChargeAttack = KeyCode.Q;
     [SerializeField] private KeyCode key_MoveType = KeyCode.Tab;
     [SerializeField] private KeyCode key_Targeting = KeyCode.E;
+    [SerializeField] private KeyCode key_Giant = KeyCode.Alpha1;
+    [SerializeField] private KeyCode key_Small = KeyCode.Alpha2;
 
     private void Awake()
     {
@@ -283,6 +286,9 @@ public class PlayerLocomotionManager : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
 
+        HandleGiantWeapon();
+        HandleSmallBody();
+        
         HandleDodge();
         HandleSprint();
         HandleWalkOrRun();
@@ -329,6 +335,40 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         HandlePlayerRotation();
         HandlePlayerMovement();
+    }
+
+    private void HandleGiantWeapon()
+    {
+        if (Input.GetKeyDown(key_Giant))
+        {
+            if (playerMana.mana.Value >= 30 && playerAttackManager.isEquipWeapon)
+            {
+                playerMana.UseMana(30f);
+                playerAttackManager.GiantWeapon();
+            }
+            
+        }
+            
+    }
+
+    private void HandleSmallBody()
+    {
+        if (Input.GetKeyDown(key_Small))
+        {
+            if (playerMana.mana.Value >= 20 && playerAttackManager.isEquipWeapon)
+            {
+                playerMana.UseMana(20f);
+                gameObject.transform.localScale = (Vector3.one * 0.1f);
+                StartCoroutine(ResetWeaponSize());
+            }
+        }
+            
+    }
+    
+    IEnumerator ResetWeaponSize()
+    {
+        yield return new WaitForSeconds(5f);
+        gameObject.transform.localScale = Vector3.one;
     }
 
     private void HandleTwoHand()

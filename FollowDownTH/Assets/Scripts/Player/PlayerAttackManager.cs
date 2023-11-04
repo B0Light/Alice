@@ -13,6 +13,10 @@ public class PlayerAttackManager : MonoBehaviour
     [SerializeField] private PlayerLocomotionManager playerLocomotionManager;
     [SerializeField] private Item weaponValue;
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private GameObject weaponIcon;
+    
+
+    public AudioSource slashSFX;
     
     public  bool isEquipWeapon = false;
 
@@ -25,6 +29,8 @@ public class PlayerAttackManager : MonoBehaviour
         UnEquipWeapon();
         Instantiate(weapon.itemObject, weaponSlot);
         weaponValue = weapon;
+        if(weaponIcon)
+            weaponIcon.SetActive(true);
     }
 
     private void UnEquipWeapon()
@@ -79,7 +85,7 @@ public class PlayerAttackManager : MonoBehaviour
                 }
                 else
                 {
-                    StartCoroutine(VFX(3, 3f, 0.5f));
+                    StartCoroutine(VFX(3, 3f, 0.3f));
                     isSetTotalDamage = 2;
                 }
                     
@@ -121,7 +127,18 @@ public class PlayerAttackManager : MonoBehaviour
                 break;
         }
     }
-    
+
+    public void GiantWeapon()
+    {
+        weaponSlot.localScale = (Vector3.one * 5f);
+        StartCoroutine(ResetWeaponSize());
+    }
+
+    IEnumerator ResetWeaponSize()
+    {
+        yield return new WaitForSeconds(5f);
+        weaponSlot.localScale = Vector3.one;
+    }
     
     
     IEnumerator VFX(int type, float impactVfxLifetime, float delay)
@@ -130,6 +147,8 @@ public class PlayerAttackManager : MonoBehaviour
         {
             yield return new WaitForSeconds(delay);
             GameObject impactVfxInstance = Instantiate(impactVfx[type], atkPos);
+            slashSFX.Play();
+            impactVfxInstance.transform.localScale = weaponSlot.localScale;
             if (impactVfxLifetime > 0)
             {
                 Destroy(impactVfxInstance, impactVfxLifetime);

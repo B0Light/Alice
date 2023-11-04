@@ -15,10 +15,10 @@ MonoBehaviour:
   id: 1
   isEquip: 0
   itemName: MasterSword
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5c9d7c4eef9a548098694064996df76c, type: 3}
   itemObject: {fileID: 6844084075171232338, guid: 1fa8b9d716a0d485bb19dc9ce2f9ae57,
     type: 3}
-  value: 100
+  value: 20
   tier: 5
   type: 0
   attackType: 0

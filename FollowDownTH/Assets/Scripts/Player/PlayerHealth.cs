@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health
 {
@@ -8,12 +10,20 @@ public class PlayerHealth : Health
     private PlayerLocomotionManager playerLocomotionManager;
     [SerializeField] private Color parryColor;
     [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private TextMeshProUGUI potionCount;
+    
+    [SerializeField] private GameObject impactVfx;
+    [SerializeField] private Transform impactPos;
+
+    public int healthPotion;
 
     protected override void Awake()
     {
         base.Awake();
         animator = GetComponent<Animator>();
         playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
+        if(potionCount)
+            potionCount.text = healthPotion.ToString();
     }
 
     private void Update()
@@ -21,6 +31,18 @@ public class PlayerHealth : Health
         if (Input.GetKeyDown(KeyCode.P))
         {
             DamageDebugger();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (healthPotion >= 1)
+            {
+                healthPotion--;
+                RecoverHealth(50f);
+                if(potionCount)
+                    potionCount.text = healthPotion.ToString();
+            }
+            
         }
     }
 
@@ -33,7 +55,7 @@ public class PlayerHealth : Health
     {
         if(isDead) return;
         // attackType 1 : horizontal
-        // attackType 2 : vertial
+        // attackType 2 : vertical
         switch (playerLocomotionManager.curPerformingAction)
         {
             case EnumList.States.Idle:
@@ -68,9 +90,12 @@ public class PlayerHealth : Health
     {
         PlayActionAnimation("Parrying", true);
         playerLocomotionManager.curPerformingAction = EnumList.States.Parry;
-        itemMesh.material.color = parryColor;
+        StartCoroutine(VFX(1f));
+        if(itemMesh)
+            itemMesh.material.color = parryColor;
         yield return new WaitForSeconds(0.2f);
-        itemMesh.material.color = Color.white;
+        if(itemMesh)
+            itemMesh.material.color = Color.white;
     }
 
     public override void TakeDmg(float dmg, int attackType = 0)
@@ -89,6 +114,7 @@ public class PlayerHealth : Health
                 PlayActionAnimation("OH_Death", true);
             }
             gameOverUI.SetActive(true);
+            StartCoroutine(GameOverSceneChange());
         }
         else
         {
@@ -102,6 +128,25 @@ public class PlayerHealth : Health
             }
         }
         
+    }
+    
+    IEnumerator VFX(float impactVfxLifetime)
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (impactVfx)
+        {
+            GameObject impactVfxInstance = Instantiate(impactVfx, impactPos);
+            if (impactVfxLifetime > 0)
+            {
+                Destroy(impactVfxInstance, impactVfxLifetime);
+            }
+        }
+    }
+
+    IEnumerator GameOverSceneChange()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("LobbyLevel");
     }
     
     private void PlayActionAnimation(string animation, bool isPerformingAction)
