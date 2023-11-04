@@ -886,8 +886,6 @@ public class PlayerLocomotionManager : MonoBehaviour
     public void FollowDownTheRabbitHole()
     {
         PlayActionAnimation("FallDown", true);
-        
-        playerStamina.UseStamina(90f);
         canRecovering = false;
         StartCoroutine(WakeUp());
     }
@@ -896,6 +894,7 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("isSleep",false);
+        playerStamina.UseStamina(90f);
     }
     
     private void CursorLock()
