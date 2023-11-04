@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c833c6d7cb1fc4e6a8a5c619bb4552a7, type: 3}
+  m_Name: Branch
+  m_EditorClassIdentifier: 
+  id: 0
+  isEquip: 0
+  itemName: Branch
+  icon: {fileID: 0}
+  itemObject: {fileID: 8428015307752594166, guid: 2d287c7eb3ae845949840b7112cc358f,
+    type: 3}
+  value: 10
+  tier: 0
+  type: 0
+  horizontalCoefficient: 1.1
+  verticalCoefficient: 1
+  stingCoefficient: 1
+  totalAttackPower: 0

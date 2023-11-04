@@ -34,10 +34,10 @@ public class PlayerHealth : Health
         // attackType 2 : vertial
         switch (playerLocomotionManager.curPerformingAction)
         {
-            case PlayerLocomotionManager.States.Idle:
+            case EnumList.States.Idle:
                 TakeDmg(dmg);
                 break;
-            case PlayerLocomotionManager.States.HorizontalAttack:
+            case EnumList.States.HorizontalAttack:
                 if(attackType == 2)
                 {
                     StartCoroutine(OnParry());
@@ -47,7 +47,7 @@ public class PlayerHealth : Health
                     TakeDmg(dmg);
                 }
                 break;
-            case PlayerLocomotionManager.States.VerticalAttack:
+            case EnumList.States.VerticalAttack:
                 if (attackType == 1)
                 {
                     StartCoroutine(OnParry());
@@ -57,7 +57,7 @@ public class PlayerHealth : Health
                     TakeDmg(dmg);
                 }
                 break;
-            case PlayerLocomotionManager.States.Dodge:
+            case EnumList.States.Dodge:
                 break;
         }
     }
@@ -65,17 +65,17 @@ public class PlayerHealth : Health
     IEnumerator OnParry()
     {
         PlayActionAnimation("Parrying", true);
-        playerLocomotionManager.curPerformingAction = PlayerLocomotionManager.States.Parry;
+        playerLocomotionManager.curPerformingAction = EnumList.States.Parry;
         itemMesh.material.color = parryColor;
         yield return new WaitForSeconds(0.2f);
         itemMesh.material.color = Color.white;
     }
 
-    public override void TakeDmg(float dmg)
+    public override void TakeDmg(float dmg, int attackType = 0)
     {
-        base.TakeDmg(dmg);
+        base.TakeDmg(dmg, attackType);
 
-        playerLocomotionManager.curPerformingAction = PlayerLocomotionManager.States.Damaged;
+        playerLocomotionManager.curPerformingAction = EnumList.States.Damaged;
         if(isDead)
         {
             if (playerLocomotionManager.isTwoHandingWeapon)

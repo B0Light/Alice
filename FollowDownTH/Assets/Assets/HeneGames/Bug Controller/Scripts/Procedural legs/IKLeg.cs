@@ -6,7 +6,7 @@ namespace HeneGames.BugController
 {
     public class IKLeg : MonoBehaviour
     {
-        private float maxReachDistance = 2f;
+        //private float maxReachDistance = 2f;
 
         private bool verticalOverride;
         private float verticalPos;

@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     protected SkinnedMeshRenderer skinnedMeshRenderer;
     [SerializeField] private Color damagedColor;
 
+    [SerializeField] private List<float> CoefValue = new List<float>(){1.0f,1.0f,1.0f,1.0f};
     public bool isDead = false;
     public bool isDmg = false;
     protected virtual void Awake()
@@ -34,7 +35,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public virtual void TakeDmg(float dmg)
+    public virtual void TakeDmg(float dmg, int attackType = 0)
     {
         if (isDead) {
             return;
@@ -42,8 +43,13 @@ public class Health : MonoBehaviour
         
         if(isDmg == false)
         {
-            StartCoroutine("OnDmg",dmg);
+            StartCoroutine("OnDmg",CalculateDamage(dmg, attackType));
         }
+    }
+
+    private float CalculateDamage(float dmg, int attackType)
+    {
+        return dmg * CoefValue[attackType];
     }
             
 

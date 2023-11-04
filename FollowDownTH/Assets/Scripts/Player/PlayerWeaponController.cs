@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-    public WeaponValue weaponValue;
+    public Item weaponValue;
 }

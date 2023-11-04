@@ -29,7 +29,6 @@ public class BossAttackManager : MonoBehaviour
     [SerializeField] private BossPattern patternMelee;
 
     [Header("RangeAttack")]
-    private bool isReady = true;
     private float fireCooldown = 0.1f;
     public Transform firePoint;
     public GameObject prefabCast;
@@ -121,9 +120,7 @@ public class BossAttackManager : MonoBehaviour
             projectile.GetComponent<HatProjectile>().UpdateTarget(_player.transform, (Vector3)uiOffset);
             Effect = prefabCast.GetComponent<ParticleSystem>();
             Effect.Play();
-            
-            //StartCoroutine(CameraShaker.Instance.Shake(0.1f, 2, 0.2f, 0));
-            isReady = false;
+            //camShake?
             yield return new WaitForSeconds(fireCooldown);
         }
     }

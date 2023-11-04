@@ -10,10 +10,15 @@ public class PotionManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("DrinkPotion");
-            PlayerStamina playerStamina = other.GetComponent<PlayerStamina>();
-            playerStamina.DrinkPotion();
-            other.transform.localScale = Vector3.one;
+            DrinkPotion(other.gameObject);
         }
+    }
+
+    public void DrinkPotion(GameObject player)
+    {
+        Debug.Log("DrinkPotion");
+        PlayerStamina playerStamina = player.GetComponent<PlayerStamina>();
+        playerStamina.DrinkPotion();
+        player.transform.localScale = Vector3.one;
     }
 }

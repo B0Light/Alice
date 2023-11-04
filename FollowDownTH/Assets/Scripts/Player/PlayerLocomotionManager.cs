@@ -11,17 +11,8 @@ public class PlayerLocomotionManager : MonoBehaviour
     Animator animator;
     private CharacterController characterController;
 
-    public enum States
-    {
-        Idle,
-        HorizontalAttack,
-        VerticalAttack,
-        ChargeAttack,
-        Dodge,
-        Parry,
-        Damaged,
-    }
-    public States curPerformingAction;
+    
+    public EnumList.States curPerformingAction;
 
     //INPUT VARIABLES
     [Header("INPUTS")]
@@ -30,14 +21,20 @@ public class PlayerLocomotionManager : MonoBehaviour
     [SerializeField] float mouseX;
     [SerializeField] float mouseY;
 
-    [Header("Ability")] 
-    public bool isAttackAbility;
+    [Header("Component")]
+    [SerializeField] private PlayerAttackManager playerAttackManager;
+
+    [SerializeField] private PlayerStamina playerStamina;
+    [SerializeField] private PlayerHealth playerHealth;
+     
     //PLAYER VARIABLES
     [Header("Player")]
     [SerializeField] bool isLockOn;
     [SerializeField] bool isSprinting;
     [SerializeField] bool isRunning;
     [SerializeField] bool isWalking;
+
+    public bool isAttack;
 
     public bool isTwoHandingWeapon;
 
@@ -79,8 +76,8 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     //ATTACK VARIABLES
     [SerializeField] private string attackLastPerformed;
-    [SerializeField] private bool lightAttackInput;
-    [SerializeField] private bool heavyAttackInput;
+    [SerializeField] private bool horizontalAttackInput;
+    [SerializeField] private bool verticalAttackInput;
     [SerializeField] private bool chargeAttackInput;
     [SerializeField] private bool parryingInput;
 
@@ -91,6 +88,12 @@ public class PlayerLocomotionManager : MonoBehaviour
     [Header("Dodge")]
     private Vector3 rollDirection;
     [SerializeField] float dodgeStaminaCost = 25;
+    [SerializeField] private float backStaminaCost = 10;
+
+    [Header("AttackCost")] 
+    [SerializeField] private float horizontalCost;
+    [SerializeField] private float verticalCost;
+    [SerializeField] private float chargeCost;
 
     string oh_Light_Attack_01 = "OH_Light_Attack_01";
     string oh_Light_Attack_02 = "OH_Light_Attack_02";
@@ -134,8 +137,9 @@ public class PlayerLocomotionManager : MonoBehaviour
         isPerformingBackStep = animator.GetBool("isPerformingBackStep");
         if (!isPerformingAction)
         {
-            curPerformingAction = States.Idle;
+            curPerformingAction = EnumList.States.Idle;
             animator.SetBool("isCombo", false);
+            isAttack = false;
         }
     }
 
@@ -266,7 +270,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         HandleSprint();
         HandleWalkOrRun();
         HandleLockOn();
-        if (isAttackAbility)
+        if (playerAttackManager.isEquipWeapon)
         {
             HandleTwoHand();
             HandleLightAttack();
@@ -323,18 +327,22 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         if (isPerformingAction)
             return;
+        if(playerStamina.stamina.Value < horizontalCost)
+            return;
 
         if (Input.GetMouseButtonDown(0))
         {
-            lightAttackInput = true;
+            playerStamina.UseStamina(horizontalCost);
+            isAttack = true;
+            horizontalAttackInput = true;
             weaponFX.Stop();
             weaponFX.Play();
         }
 
-        if (lightAttackInput)
+        if (horizontalAttackInput)
         {
-            curPerformingAction = States.HorizontalAttack;
-            lightAttackInput = false;
+            curPerformingAction = EnumList.States.HorizontalAttack;
+            horizontalAttackInput = false;
 
             if (isTwoHandingWeapon)
             {
@@ -363,6 +371,9 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void HandleLightAttackCombo()
     {
+        if(playerStamina.stamina.Value < horizontalCost)
+            return;
+        
         if (isPerformingAction)
         {
             if (attackLastPerformed == oh_Light_Attack_01)
@@ -370,6 +381,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     animator.SetBool("isCombo", true);
+                    playerStamina.UseStamina(horizontalCost);
                     weaponFX.Stop();
                     weaponFX.Play();
                     attackLastPerformed = oh_Light_Attack_02;
@@ -382,6 +394,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     animator.SetBool("isCombo", true);
+                    playerStamina.UseStamina(horizontalCost);
                     weaponFX.Stop();
                     weaponFX.Play();
                     attackLastPerformed = th_Light_Attack_02;
@@ -394,16 +407,21 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         if (isPerformingAction)
             return;
+        
+        if(playerStamina.stamina.Value < verticalCost)
+            return;
 
         if (Input.GetMouseButtonUp(1))
         {
-            heavyAttackInput = true;
+            verticalAttackInput = true;
+            playerStamina.UseStamina(verticalCost);
+            isAttack = true;
         }
 
-        if (heavyAttackInput)
+        if (verticalAttackInput)
         {
-            curPerformingAction = States.VerticalAttack;
-            heavyAttackInput = false;
+            curPerformingAction = EnumList.States.VerticalAttack;
+            verticalAttackInput = false;
 
             if (isTwoHandingWeapon)
             {
@@ -440,6 +458,9 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void HandleHeavyAttackCombo()
     {
+        if(playerStamina.stamina.Value < verticalCost)
+            return;
+        
         if (isPerformingAction)
         {
             if (attackLastPerformed == oh_Heavy_Attack_01)
@@ -447,6 +468,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 if (Input.GetMouseButtonUp(1))
                 {
                     animator.SetBool("isCombo", true);
+                    playerStamina.UseStamina(verticalCost);
                     weaponFX.Stop();
                     weaponFX.Play();
                     attackLastPerformed = oh_Heavy_Attack_02;
@@ -457,6 +479,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                 if (Input.GetMouseButtonUp(1))
                 {
                     animator.SetBool("isCombo", true);
+                    playerStamina.UseStamina(verticalCost);
                     weaponFX.Stop();
                     weaponFX.Play();
                     attackLastPerformed = th_Heavy_Attack_02;
@@ -475,10 +498,15 @@ public class PlayerLocomotionManager : MonoBehaviour
 
         if (isPerformingAction)
             return;
+        
+        if(playerStamina.stamina.Value < chargeCost)
+            return;
 
         if (chargeAttackInput)
         {
-            curPerformingAction = States.ChargeAttack;
+            curPerformingAction = EnumList.States.ChargeAttack;
+            playerStamina.UseStamina(chargeCost);
+            isAttack = true;
             chargeAttackInput = false;
 
             if (isTwoHandingWeapon)
@@ -500,6 +528,9 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void HandleChargeAttackCombo()
     {
+        if(playerStamina.stamina.Value < chargeCost)
+            return;
+        
         if (isPerformingAction)
         {
             if (Input.GetKeyDown(key_ChargeAttack))
@@ -516,6 +547,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                     if (Input.GetKeyDown(key_ChargeAttack))
                     {
                         animator.SetBool("isCombo", true);
+                        playerStamina.UseStamina(chargeCost);
                         weaponChargeFX.Stop();
                         weaponChargeFX.Play();
                         attackLastPerformed = oh_Charge_Attack_02;
@@ -527,6 +559,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                     if (Input.GetKeyDown(key_ChargeAttack))
                     {
                         animator.SetBool("isCombo", true);
+                        playerStamina.UseStamina(chargeCost);
                         weaponChargeFX.Stop();
                         weaponChargeFX.Play();
                         attackLastPerformed = th_Charge_Attack_02;
@@ -542,13 +575,13 @@ public class PlayerLocomotionManager : MonoBehaviour
         if (isPerformingAction)
             return;
 
-        /*
-        if (player.playerNetworkManager.currentStamina.Value <= 0)
+        
+        if (playerStamina.stamina.Value < dodgeStaminaCost)
             return;
-        */
-        if (Input.GetKeyUp(key_Dodge))
+        
+        if (Input.GetKeyDown(key_Dodge))
         {
-            curPerformingAction = States.Dodge;
+            curPerformingAction = EnumList.States.Dodge;
             if (moveAmount > 0)
             {
                 rollDirection = moveDirection;
@@ -559,11 +592,12 @@ public class PlayerLocomotionManager : MonoBehaviour
                 this.transform.rotation = playerRotation;
 
                 PlayActionAnimation("Roll_Forward_01", true);
+                playerStamina.UseStamina(dodgeStaminaCost);
             }
             else
             {
                 attackLastPerformed = null;
-
+                playerStamina.UseStamina(backStaminaCost);
                 animator.SetBool("isPerformingBackStep", true);
 
                 if (isTwoHandingWeapon)
@@ -586,7 +620,8 @@ public class PlayerLocomotionManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                curPerformingAction = States.HorizontalAttack;
+                curPerformingAction = EnumList.States.HorizontalAttack;
+                isAttack = true;
                 animator.SetBool("isPerformingBackStep", false);
 
                 if (isTwoHandingWeapon)
@@ -618,6 +653,7 @@ public class PlayerLocomotionManager : MonoBehaviour
                     targetTransform = targetObject.transform;
                     isLockOn = true;
                     cameraObject.LookAt = targetTransform;
+                    
                     return;
                 }
             }
@@ -756,6 +792,7 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         Vector3 cameraRotation;
         Quaternion targetCameraRotation;
+        Quaternion lockOnCamRotation;
 
         leftandRightLookAngle += (mouseX * leftAndRightLookSpeed) * Time.deltaTime;
         upAndDownLookAngle -= (mouseY * upAndDownLookSpeed) * Time.deltaTime;
@@ -776,9 +813,11 @@ public class PlayerLocomotionManager : MonoBehaviour
         cameraRotation = Vector3.zero;
         cameraRotation.x = upAndDownLookAngle;
         targetCameraRotation = Quaternion.Euler(cameraRotation);
+
+        lockOnCamRotation = Quaternion.Euler(30f, -15f, 0f);
         
         playerCameraPivot.transform.localRotation = 
-            isLockOn ? quaternion.identity: targetCameraRotation;
+            isLockOn ? lockOnCamRotation : targetCameraRotation;
     }
 
     public void FollowDownTheRabbitHole()
