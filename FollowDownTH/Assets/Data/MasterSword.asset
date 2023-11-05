@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   isEquip: 0
-  itemName: MasterSword
+  itemName: VorpalSword
   icon: {fileID: 21300000, guid: 5c9d7c4eef9a548098694064996df76c, type: 3}
   itemObject: {fileID: 6844084075171232338, guid: 1fa8b9d716a0d485bb19dc9ce2f9ae57,
     type: 3}
-  value: 20
+  value: 25
   tier: 5
   type: 0
   attackType: 0
   horizontalCoefficient: 2
-  verticalCoefficient: 1
-  stingCoefficient: 1
+  verticalCoefficient: 3
+  stingCoefficient: 5
   totalAttackPower: 0
