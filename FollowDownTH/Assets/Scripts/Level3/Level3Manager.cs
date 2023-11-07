@@ -16,8 +16,6 @@ public class Level3Manager : MonoBehaviour
     [SerializeField] private GameObject wall;
     [SerializeField] private Collider eventCollider;
 
-    [SerializeField] private AudioClip stageBoss;
-    [SerializeField] private AudioSource audioSource;
     private bool isGameEnd;
     private void OnTriggerEnter(Collider other)
     {
@@ -38,9 +36,6 @@ public class Level3Manager : MonoBehaviour
         vCamera.gameObject.SetActive(true);
         playerLocomotionManager.isRunning = false;
         playerLocomotionManager.isPlayerActive = false;
-        audioSource.Stop();
-        audioSource.clip = stageBoss;
-        audioSource.Play();
         eventCollider.enabled = false;
         StartCoroutine(WaitForIt());
     }
